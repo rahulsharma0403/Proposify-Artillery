@@ -2,20 +2,11 @@ const { test, expect } = require('@playwright/test');
 
 // Array of usernames
 const usernames = [
-    "fe.testing+1704476354@proposify.com",
-    "fe.testing+1704476354@proposify.com",
-    "fe.testing+1693930230532@proposify.com",
-    "fe.testing+1693930243096@proposify.com",
-    "fe.testing+1693930457800@proposify.com",
-    "fe.testing+1693932037148@proposify.com",
-    "fe.testing+1693932054820@proposify.com",
-    "fe.testing+1693932061438@proposify.com",
-    "fe.testing+1700946230641@proposify.com",
-    "fe.testing+1700946250596@proposify.com",
+  
 ];
 
 // Password for all users
-const password = "CD9UdyCC3PrJV3C2v36h3EYJh*!.Pn";
+const password = "xxxxx";
 
 // Track active usernames globally
 let activeUsernames = new Set();
