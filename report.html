@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Artillery report</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+    integrity="sha384-scMuAXtFmPAlw0+pXLvnpHCt6VHh7AknTPdNrwiph5BA6MJWysg5WgSDl7r63txN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"
+    integrity="sha384-v7eExOYhwaHa3+GhP+lHytJsMcidazNdjiaggRhdbvVTVTCjweLpa23t37ZKxaCf"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha384-H6KKS1H1WwuERMSm+54dYLzjg0fKqRK5ZRyASdbrI/lwrCc6bXEmtGYr5SwvP1pZ"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.5.3/ace.js" charset="utf=8"
+    integrity="sha512-NofUHaTd/uaO1GXfw0JvXptI9XdO5LLrfjl7jVqnFlbxdgqVlE3SmuXAUoqRTB5GQKd82yzhchaDlc6C6+SylA=="
+    crossorigin="anonymous"></script>
+
+  <link href="https://artilleryio.github.io/artillery-tailwind/src/build.css" rel="stylesheet" type="text/css"
+    crossorigin="anonymous" />
+
+  <style>
+    html {
+      --bg-dark: #161616;
+      --bg: #202020;
+      --text: #ffffff;
+      --text-faded: #9b9b9b;
+      --border: #383838;
+      height: 100%;
+    }
+
+
+    .tab {
+      color: #9B9B9B;
+      border-color: transparent;
+    }
+
+    .tab:hover {
+      color: #FFFFFF;
+    }
+
+    .tab.active {
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+    }
+
+    .tab.active:hover {
+      color: #FFFFFF;
+    }
+
+    .tab:hover span:first-child,
+    .tab.active:hover span:first-child {
+      background: #000000;
+    }
+
+    #errorsContainer>p {
+      color: var(--green);
+    }
+
+    #editor {
+      font-size: 10pt;
+    }
+
+    #editor input,
+    button {
+      color: var(--bg-dark);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .border-gray {
+      border: 1px solid var(--border);
+    }
+
+    .border-bottom-gray {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chevron-down span {
+      transform: rotate(180deg);
+    }
+
+    .cursor-pointer {
+      cursor: pointer;
+    }
+
+    .index-tree-wrapper {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .index-tree-wrapper {
+        display: inline-flex;
+      }
+    }
+
+  </style>
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('_uzX-_WJoVmE_tsLvu0OFD2tpd0HGz72D5sU1zM2hbs', {api_host: 'https://app.posthog.com', autocapture: false});
+    posthog.capture('report view', { });
+  </script>
+</head>
+
+<body>
+
+    <header class="header bg-black-default border-b border-gray-700 mb-9">
+      <div class="container m-auto relative flex items-center justify-between py-3 px-4 md:px-8">
+        <div class="flex items-center">
+          <div
+            class="group-hover:border-black-200 flex overflow-hidden rounded-md border-2 border-gray-800 transition mr-2">
+            <svg width="32" height="32" viewBox="0 0 300 306" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M177.235 169.156L138.632 132.074L107.952 144.704L93.2929 130.623L228.213 75.9894L180.953 214.829L166.06 200.523L177.235 169.156ZM183.738 150.815L199.254 106.778L156.348 124.505L183.738 150.815Z"
+                fill="white" />
+              <path
+                d="M136.138 135.974L175.036 173.339L208.275 137.452L221.883 150.524L136.914 242.26L123.306 229.189L162.984 186.35L124.087 148.986L84.4087 191.824L70.8005 178.752L155.769 87.0157L169.378 100.088L136.138 135.974Z"
+                fill="white" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="font-medium text-sm" id="report-name">
+              Artillery Report
+            </h1>
+            <div class="text-gray-default my-0 block text-xs transition group-hover:text-gray-700" id="timestamp"></div>
+          </div>
+        </div>
+        <div class="text-xsm">
+          <a target="_blank" rel="nofollow noopener" class="focus:text-beige text-gray-default transition-colors hover:text-gray-300 flex items-center space-x-1" href="https://artillery.io/docs">
+            <span>Docs</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" aria-label="External link" aria-labelledby="icon_external_1" x="0px" y="0px" role="img"><title id="icon_external_1" lang="en">External link</title><g fill="currentColor"><path d="M19 19H5V5H12V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V12H19V19ZM14 3V5H17.59L7.76 14.83L9.17 16.24L19 6.41V10H21V3H14Z"></path></g></svg>
+          </a>
+        </div>
+      </div>
+      <!-- tabs -->
+      <div class="bg-black-default relative pt-4 text-sm">
+        <div class="container m-auto flex items-center space-x-2 px-4 md:px-8">
+          <button id="charts-tab" class="tab active group border-b border-b-2 py-2 transition-all">
+            <span class="text-xsm flex items-center space-x-2 rounded py-1.5 px-2.5 transition-all">
+              
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.33331 12.3267L6.33331 8.32001L8.99998 10.9867L14.6666 4.61334L13.7266 3.67334L8.99998 8.98667L6.33331 6.32001L1.33331 11.3267L2.33331 12.3267Z" fill="currentColor"/>
+                  </svg>
+              <span class="leading-4">Reports</span>
+            </span>
+          </button>
+          <button id="json-tab" class="tab group border-b border-b-2 py-2 transition-all">
+            <span class="text-xsm flex items-center space-x-2 rounded py-1.5 px-2.5 transition-all">
+              
+                <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.26665 11.0667L3.19998 8L6.26665 4.93333L5.33331 4L1.33331 8L5.33331 12L6.26665 11.0667ZM9.73331 11.0667L12.8 8L9.73331 4.93333L10.6666 4L14.6666 8L10.6666 12L9.73331 11.0667V11.0667Z" fill="currentColor"/>
+                </svg>  
+              <span class="leading-4">JSON Output</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main style="margin-bottom: 2.5rem;">
+      <div class="container text-sm m-auto px-4 md:px-8">
+        <!-- summary blocks -->
+        <div class="app-test-stats w-full">
+          <ul class="flex flex-wrap space-x-3.5" id="summary-blocks">
+          </ul>
+        </div>
+        <div class="flex items-start w-full flex-row space-x-0 md:space-x-4 mt-1">
+          <!-- counters summary -->
+          <div class="w-full" id="charts-col">
+            <div class="overflow-x-auto overflow-y-hidden rounded border-gray mb-4">
+              <table class="w-full border-collapse text-left">
+                <thead class="text-gray-default bg-black-200 border-b border-gray-800" style="background-color: #2b2b2b;">
+                  <tr>
+                    <th class="whitespace-nowrap p-2" colspan="6">
+                      <span class="text-xsm" style="font-weight: 500 !important;">Metric</span>
+                    </th>
+                    <th class="whitespace-nowrap p-2" colspan="6">
+                      <span class="text-xsm" style="font-weight: 500 !important;">Value</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-800" id="customCountersTable">
+                </tbody>
+              </table>
+            </div>
+            <div id="errorsChartsRow">
+              <h4><i class="fas fa-chart-area"></i> Errors at intervals</h4>
+              <canvas id="errorsAtIntervalsChart"></canvas>
+            </div>
+            <!-- charts -->
+            <div id="customCountersAtIntervalsChart" class="space-y-4"></div>
+          </div>
+          <div class="index-tree-wrapper w-56 text-xsm sticky top-3">
+            <div id="index-tree">
+            </div>
+          </div>
+        </div>
+
+        <!-- json text output -->
+        <div>
+          <div class="hidden border-gray rounded" style="overflow: hidden;" id="json-output">
+            <div class="p-2 text-gray-default text-xsm flex items-center justify-between text-gray-default" style="border-bottom: 1px solid #383838; background-color: #2b2b2b; font-weight: 500;">JSON Output
+              <button id="copy-json" class="flex justify-center items-center space-x-2 font-medium text-center rounded transition-all p-1.5 text-xsm hover:text-gray-300 focus:text-gray-300 bg-transparent focus:ring hover:bg-black-700 text-gray-default focus:ring-black-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="" aria-labelledby="icon_copy" x="0px" y="0px" role="img" class="inline false"><title id="icon_copy" lang="en"></title><g fill="#9b9b9b"><path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z"></path></g></svg>
+              </button>
+            </div>
+            <div id="editor"></div>
+          </div>
+        </div>
+      </div> <!-- /.row -->
+
+
+      <div class="row">
+        <div class="codes-line text-center col-lg-12"></div>
+      </div>
+      <div class="row">
+        <div class="errors-line text-center col-lg-12"></div>
+      </div>
+  </div>
+  </main>
+  <footer id="footer" class="bg-black-default py-4 text-xsm text-gray-default" style="margin-top: 2rem;">
+    <div class="container m-auto px-4 md:px-8">
+      <a href="https://www.artillery.io">Artillery</a> &bull; move fast, stay fast, stay reliable &bull; <a href="https://www.artillery.io">www.artillery.io</a>
+    </div>
+  </footer>
+
+
+
+  <script charset="utf-8">
+    const Report = {
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 1020,
+      "vusers.created": 1020,
+      "browser.page.codes.200": 46171,
+      "browser.http_requests": 49583,
+      "browser.page.codes.307": 1314,
+      "errors.All usernames have been used.": 574,
+      "vusers.failed": 921,
+      "browser.page.codes.201": 108,
+      "vusers.completed": 99,
+      "browser.page.codes.401": 1844,
+      "browser.page.codes.204": 10,
+      "browser.page.codes.304": 99,
+      "errors.locator.click: Timeout 30000ms exceeded.": 294,
+      "browser.page.codes.302": 79,
+      "errors.pw_failed_assertion.toBeVisible": 53,
+      "browser.page.codes.404": 48,
+      "browser.page.codes.502": 1
+    },
+    "rates": {},
+    "firstCounterAt": 1733089544579,
+    "firstHistogramAt": 1733089571483,
+    "lastCounterAt": 1733090097614,
+    "lastHistogramAt": 1733090097614,
+    "firstMetricAt": 1733089544579,
+    "lastMetricAt": 1733090097614,
+    "period": 1733090090000,
+    "summaries": {
+      "vusers.session_length": {
+        "min": 16512.7,
+        "max": 226818.5,
+        "count": 99,
+        "mean": 46863.9,
+        "p50": 25091.6,
+        "median": 25091.6,
+        "p75": 27730.6,
+        "p90": 171159.6,
+        "p95": 217588.2,
+        "p99": 221983.9,
+        "p999": 221983.9
+      },
+      "browser.page.TTFB.https://app.proposify.net/login": {
+        "min": 130.9,
+        "max": 607.8,
+        "count": 36,
+        "mean": 245.7,
+        "p50": 214.9,
+        "median": 214.9,
+        "p75": 273.2,
+        "p90": 333.7,
+        "p95": 441.5,
+        "p99": 572.6,
+        "p999": 572.6
+      },
+      "browser.page.FCP.https://app.proposify.net/login": {
+        "min": 146.5,
+        "max": 650.9,
+        "count": 36,
+        "mean": 269.8,
+        "p50": 232.8,
+        "median": 232.8,
+        "p75": 295.9,
+        "p90": 354.3,
+        "p95": 459.5,
+        "p99": 620.3,
+        "p999": 620.3
+      }
+    },
+    "histograms": {
+      "vusers.session_length": {
+        "min": 16512.7,
+        "max": 226818.5,
+        "count": 99,
+        "mean": 46863.9,
+        "p50": 25091.6,
+        "median": 25091.6,
+        "p75": 27730.6,
+        "p90": 171159.6,
+        "p95": 217588.2,
+        "p99": 221983.9,
+        "p999": 221983.9
+      },
+      "browser.page.TTFB.https://app.proposify.net/login": {
+        "min": 130.9,
+        "max": 607.8,
+        "count": 36,
+        "mean": 245.7,
+        "p50": 214.9,
+        "median": 214.9,
+        "p75": 273.2,
+        "p90": 333.7,
+        "p95": 441.5,
+        "p99": 572.6,
+        "p999": 572.6
+      },
+      "browser.page.FCP.https://app.proposify.net/login": {
+        "min": 146.5,
+        "max": 650.9,
+        "count": 36,
+        "mean": 269.8,
+        "p50": 232.8,
+        "median": 232.8,
+        "p75": 295.9,
+        "p90": 354.3,
+        "p95": 459.5,
+        "p99": 620.3,
+        "p999": 620.3
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.0": 6,
+        "vusers.created": 6,
+        "browser.page.codes.200": 117,
+        "browser.http_requests": 117
+      },
+      "rates": {},
+      "firstCounterAt": 1733089544579,
+      "lastCounterAt": 1733089549999,
+      "firstMetricAt": 1733089544579,
+      "lastMetricAt": 1733089549999,
+      "period": "1733089540000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 694,
+        "browser.http_requests": 703,
+        "browser.page.codes.307": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089550000,
+      "lastCounterAt": 1733089559955,
+      "firstMetricAt": 1733089550000,
+      "lastMetricAt": 1733089559955,
+      "period": "1733089550000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 127,
+        "browser.http_requests": 131,
+        "errors.All usernames have been used.": 10,
+        "vusers.failed": 10,
+        "browser.page.codes.201": 5,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10
+      },
+      "rates": {},
+      "firstCounterAt": 1733089560011,
+      "lastCounterAt": 1733089569943,
+      "firstMetricAt": 1733089560011,
+      "lastMetricAt": 1733089569943,
+      "period": "1733089560000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 426,
+        "browser.http_requests": 442,
+        "errors.All usernames have been used.": 4,
+        "vusers.failed": 4,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.307": 19,
+        "browser.page.codes.201": 4,
+        "vusers.completed": 7
+      },
+      "rates": {},
+      "firstCounterAt": 1733089570116,
+      "firstHistogramAt": 1733089571483,
+      "lastCounterAt": 1733089579998,
+      "lastHistogramAt": 1733089578627,
+      "firstMetricAt": 1733089570116,
+      "lastMetricAt": 1733089579998,
+      "period": "1733089570000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 26503.3,
+          "max": 31038.8,
+          "count": 7,
+          "mean": 28017.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 26503.3,
+          "max": 31038.8,
+          "count": 7,
+          "mean": 28017.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 508,
+        "browser.http_requests": 513,
+        "browser.page.codes.307": 8,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "vusers.failed": 7,
+        "vusers.completed": 2,
+        "errors.All usernames have been used.": 7
+      },
+      "rates": {},
+      "firstCounterAt": 1733089580006,
+      "firstHistogramAt": 1733089580800,
+      "lastCounterAt": 1733089589999,
+      "lastHistogramAt": 1733089582788,
+      "firstMetricAt": 1733089580006,
+      "lastMetricAt": 1733089589999,
+      "period": "1733089580000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 28201.4,
+          "max": 31194.7,
+          "count": 2,
+          "mean": 29698.1,
+          "p50": 28290.8,
+          "median": 28290.8,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 28201.4,
+          "max": 31194.7,
+          "count": 2,
+          "mean": 29698.1,
+          "p50": 28290.8,
+          "median": 28290.8,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 110,
+        "browser.http_requests": 120,
+        "browser.page.codes.201": 8,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.307": 4,
+        "vusers.completed": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089590000,
+      "firstHistogramAt": 1733089599309,
+      "lastCounterAt": 1733089599991,
+      "lastHistogramAt": 1733089599486,
+      "firstMetricAt": 1733089590000,
+      "lastMetricAt": 1733089599991,
+      "period": "1733089590000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 27662.8,
+          "max": 28852,
+          "count": 2,
+          "mean": 28257.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 27730.6,
+          "p90": 27730.6,
+          "p95": 27730.6,
+          "p99": 27730.6,
+          "p999": 27730.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 27662.8,
+          "max": 28852,
+          "count": 2,
+          "mean": 28257.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 27730.6,
+          "p90": 27730.6,
+          "p95": 27730.6,
+          "p99": 27730.6,
+          "p999": 27730.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 673,
+        "browser.http_requests": 689,
+        "browser.page.codes.307": 21,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 1,
+        "vusers.failed": 2,
+        "vusers.completed": 7,
+        "errors.All usernames have been used.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089600024,
+      "firstHistogramAt": 1733089601047,
+      "lastCounterAt": 1733089609991,
+      "lastHistogramAt": 1733089608330,
+      "firstMetricAt": 1733089600024,
+      "lastMetricAt": 1733089609991,
+      "period": "1733089600000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 25668,
+          "max": 27402.8,
+          "count": 7,
+          "mean": 26588.3,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 25668,
+          "max": 27402.8,
+          "count": 7,
+          "mean": 26588.3,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 311,
+        "browser.http_requests": 321,
+        "browser.page.codes.307": 3,
+        "errors.All usernames have been used.": 10,
+        "vusers.failed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089610025,
+      "lastCounterAt": 1733089619951,
+      "firstMetricAt": 1733089610025,
+      "lastMetricAt": 1733089619951,
+      "period": "1733089610000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 614,
+        "browser.page.codes.307": 23,
+        "browser.http_requests": 632,
+        "browser.page.codes.201": 3,
+        "vusers.failed": 2,
+        "vusers.completed": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089620070,
+      "firstHistogramAt": 1733089620541,
+      "lastCounterAt": 1733089629990,
+      "lastHistogramAt": 1733089628347,
+      "firstMetricAt": 1733089620070,
+      "lastMetricAt": 1733089629990,
+      "period": "1733089620000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 19568.1,
+          "max": 22130.8,
+          "count": 9,
+          "mean": 20763.3,
+          "p50": 20958.1,
+          "median": 20958.1,
+          "p75": 21813.5,
+          "p90": 21813.5,
+          "p95": 21813.5,
+          "p99": 21813.5,
+          "p999": 21813.5
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 19568.1,
+          "max": 22130.8,
+          "count": 9,
+          "mean": 20763.3,
+          "p50": 20958.1,
+          "median": 20958.1,
+          "p75": 21813.5,
+          "p90": 21813.5,
+          "p95": 21813.5,
+          "p99": 21813.5,
+          "p999": 21813.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 400,
+        "browser.http_requests": 411,
+        "browser.page.codes.307": 7,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "browser.page.codes.201": 6,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089630017,
+      "firstHistogramAt": 1733089639765,
+      "lastCounterAt": 1733089639982,
+      "lastHistogramAt": 1733089639765,
+      "firstMetricAt": 1733089630017,
+      "lastMetricAt": 1733089639982,
+      "period": "1733089630000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 19970.7,
+          "max": 19970.7,
+          "count": 1,
+          "mean": 19970.7,
+          "p50": 20136.3,
+          "median": 20136.3,
+          "p75": 20136.3,
+          "p90": 20136.3,
+          "p95": 20136.3,
+          "p99": 20136.3,
+          "p999": 20136.3
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 19970.7,
+          "max": 19970.7,
+          "count": 1,
+          "mean": 19970.7,
+          "p50": 20136.3,
+          "median": 20136.3,
+          "p75": 20136.3,
+          "p90": 20136.3,
+          "p95": 20136.3,
+          "p99": 20136.3,
+          "p999": 20136.3
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 803,
+        "browser.http_requests": 822,
+        "vusers.failed": 1,
+        "vusers.completed": 8,
+        "browser.page.codes.201": 3,
+        "browser.page.codes.307": 22,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089640004,
+      "firstHistogramAt": 1733089640018,
+      "lastCounterAt": 1733089649963,
+      "lastHistogramAt": 1733089646565,
+      "firstMetricAt": 1733089640004,
+      "lastMetricAt": 1733089649963,
+      "period": "1733089640000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 16757.1,
+          "max": 19224.4,
+          "count": 8,
+          "mean": 18142.6,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18588.1,
+          "p90": 19346.7,
+          "p95": 19346.7,
+          "p99": 19346.7,
+          "p999": 19346.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 16757.1,
+          "max": 19224.4,
+          "count": 8,
+          "mean": 18142.6,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18588.1,
+          "p90": 19346.7,
+          "p95": 19346.7,
+          "p99": 19346.7,
+          "p999": 19346.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 283,
+        "browser.http_requests": 295,
+        "browser.page.codes.307": 5,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 9,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089650044,
+      "firstHistogramAt": 1733089658630,
+      "lastCounterAt": 1733089659989,
+      "lastHistogramAt": 1733089658630,
+      "firstMetricAt": 1733089650044,
+      "lastMetricAt": 1733089659989,
+      "period": "1733089650000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 18789.7,
+          "max": 18789.7,
+          "count": 1,
+          "mean": 18789.7,
+          "p50": 18963.6,
+          "median": 18963.6,
+          "p75": 18963.6,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 18789.7,
+          "max": 18789.7,
+          "count": 1,
+          "mean": 18789.7,
+          "p50": 18963.6,
+          "median": 18963.6,
+          "p75": 18963.6,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 782,
+        "browser.http_requests": 802,
+        "browser.page.codes.307": 23,
+        "vusers.failed": 2,
+        "vusers.completed": 8,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089660093,
+      "firstHistogramAt": 1733089660393,
+      "lastCounterAt": 1733089669977,
+      "lastHistogramAt": 1733089665088,
+      "firstMetricAt": 1733089660093,
+      "lastMetricAt": 1733089669977,
+      "period": "1733089660000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 17248,
+          "max": 19549.7,
+          "count": 8,
+          "mean": 18231.6,
+          "p50": 18220,
+          "median": 18220,
+          "p75": 18588.1,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 17248,
+          "max": 19549.7,
+          "count": 8,
+          "mean": 18231.6,
+          "p50": 18220,
+          "median": 18220,
+          "p75": 18588.1,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 329,
+        "browser.http_requests": 344,
+        "errors.All usernames have been used.": 7,
+        "vusers.failed": 7,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 8,
+        "browser.page.codes.307": 13,
+        "vusers.completed": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089670050,
+      "firstHistogramAt": 1733089676386,
+      "lastCounterAt": 1733089679960,
+      "lastHistogramAt": 1733089679570,
+      "firstMetricAt": 1733089670050,
+      "lastMetricAt": 1733089679960,
+      "period": "1733089670000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 17683.1,
+          "max": 18519.8,
+          "count": 4,
+          "mean": 18044.9,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18220,
+          "p90": 18220,
+          "p95": 18220,
+          "p99": 18220,
+          "p999": 18220
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 17683.1,
+          "max": 18519.8,
+          "count": 4,
+          "mean": 18044.9,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18220,
+          "p90": 18220,
+          "p95": 18220,
+          "p99": 18220,
+          "p999": 18220
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 684,
+        "browser.http_requests": 693,
+        "vusers.failed": 4,
+        "vusers.completed": 5,
+        "browser.page.codes.307": 14,
+        "vusers.created_by_name.0": 9,
+        "vusers.created": 9,
+        "errors.All usernames have been used.": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089680082,
+      "firstHistogramAt": 1733089680101,
+      "lastCounterAt": 1733089689925,
+      "lastHistogramAt": 1733089683583,
+      "firstMetricAt": 1733089680082,
+      "lastMetricAt": 1733089689925,
+      "period": "1733089680000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 16512.7,
+          "max": 17213.8,
+          "count": 5,
+          "mean": 16834.8,
+          "p50": 16819.2,
+          "median": 16819.2,
+          "p75": 17158.9,
+          "p90": 17158.9,
+          "p95": 17158.9,
+          "p99": 17158.9,
+          "p999": 17158.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 16512.7,
+          "max": 17213.8,
+          "count": 5,
+          "mean": 16834.8,
+          "p50": 16819.2,
+          "median": 16819.2,
+          "p75": 17158.9,
+          "p90": 17158.9,
+          "p95": 17158.9,
+          "p99": 17158.9,
+          "p999": 17158.9
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 15,
+        "vusers.created": 15,
+        "browser.page.codes.200": 275,
+        "browser.http_requests": 284,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "browser.page.codes.201": 9,
+        "browser.page.codes.307": 3,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089690001,
+      "firstHistogramAt": 1733089698505,
+      "lastCounterAt": 1733089699993,
+      "lastHistogramAt": 1733089698505,
+      "firstMetricAt": 1733089690001,
+      "lastMetricAt": 1733089699993,
+      "period": "1733089690000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 22564.4,
+          "max": 22564.4,
+          "count": 1,
+          "mean": 22564.4,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 22703.7,
+          "p90": 22703.7,
+          "p95": 22703.7,
+          "p99": 22703.7,
+          "p999": 22703.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 22564.4,
+          "max": 22564.4,
+          "count": 1,
+          "mean": 22564.4,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 22703.7,
+          "p90": 22703.7,
+          "p95": 22703.7,
+          "p99": 22703.7,
+          "p999": 22703.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1372,
+        "browser.http_requests": 1435,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.307": 40,
+        "browser.page.codes.401": 31,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 6,
+        "vusers.completed": 8
+      },
+      "rates": {},
+      "firstCounterAt": 1733089700001,
+      "firstHistogramAt": 1733089700432,
+      "lastCounterAt": 1733089709999,
+      "lastHistogramAt": 1733089706582,
+      "firstMetricAt": 1733089700001,
+      "lastMetricAt": 1733089709999,
+      "period": "1733089700000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 21612,
+          "max": 24337.9,
+          "count": 8,
+          "mean": 22929.7,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 23630.3,
+          "p90": 23630.3,
+          "p95": 23630.3,
+          "p99": 23630.3,
+          "p999": 23630.3
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 21612,
+          "max": 24337.9,
+          "count": 8,
+          "mean": 22929.7,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 23630.3,
+          "p90": 23630.3,
+          "p95": 23630.3,
+          "p99": 23630.3,
+          "p999": 23630.3
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.http_requests": 602,
+        "browser.page.codes.401": 23,
+        "browser.page.codes.200": 559,
+        "browser.page.codes.307": 14,
+        "errors.All usernames have been used.": 21,
+        "vusers.failed": 21,
+        "browser.page.codes.304": 2,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.201": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089710000,
+      "lastCounterAt": 1733089719940,
+      "firstMetricAt": 1733089710000,
+      "lastMetricAt": 1733089719940,
+      "period": "1733089710000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "errors.All usernames have been used.": 16,
+        "vusers.failed": 17,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "errors.locator.click: Timeout 30000ms exceeded.": 1,
+        "browser.page.codes.200": 304,
+        "browser.http_requests": 322,
+        "browser.page.codes.201": 7,
+        "browser.page.codes.307": 16,
+        "vusers.completed": 5
+      },
+      "rates": {},
+      "firstCounterAt": 1733089720001,
+      "firstHistogramAt": 1733089724855,
+      "lastCounterAt": 1733089729963,
+      "lastHistogramAt": 1733089729908,
+      "firstMetricAt": 1733089720001,
+      "lastMetricAt": 1733089729963,
+      "period": "1733089720000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 24880.9,
+          "max": 26843,
+          "count": 5,
+          "mean": 25745.2,
+          "p50": 25598.5,
+          "median": 25598.5,
+          "p75": 26115.6,
+          "p90": 26115.6,
+          "p95": 26115.6,
+          "p99": 26115.6,
+          "p999": 26115.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 24880.9,
+          "max": 26843,
+          "count": 5,
+          "mean": 25745.2,
+          "p50": 25598.5,
+          "median": 25598.5,
+          "p75": 26115.6,
+          "p90": 26115.6,
+          "p95": 26115.6,
+          "p99": 26115.6,
+          "p999": 26115.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.locator.click: Timeout 30000ms exceeded.": 8,
+        "vusers.failed": 13,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.200": 1462,
+        "browser.http_requests": 1590,
+        "browser.page.codes.307": 32,
+        "errors.All usernames have been used.": 5,
+        "vusers.completed": 4,
+        "browser.page.codes.401": 96,
+        "browser.page.codes.304": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089730034,
+      "firstHistogramAt": 1733089730326,
+      "lastCounterAt": 1733089739998,
+      "lastHistogramAt": 1733089730936,
+      "firstMetricAt": 1733089730034,
+      "lastMetricAt": 1733089739998,
+      "period": "1733089730000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 21462.6,
+          "max": 24297.2,
+          "count": 4,
+          "mean": 23139.8,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 24107.7,
+          "p90": 24107.7,
+          "p95": 24107.7,
+          "p99": 24107.7,
+          "p999": 24107.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 21462.6,
+          "max": 24297.2,
+          "count": 4,
+          "mean": 23139.8,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 24107.7,
+          "p90": 24107.7,
+          "p95": 24107.7,
+          "p99": 24107.7,
+          "p999": 24107.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 393,
+        "browser.http_requests": 429,
+        "errors.All usernames have been used.": 20,
+        "vusers.failed": 20,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.307": 9,
+        "browser.page.codes.201": 2,
+        "browser.page.codes.401": 24,
+        "browser.page.codes.304": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089740027,
+      "lastCounterAt": 1733089749997,
+      "firstMetricAt": 1733089740027,
+      "lastMetricAt": 1733089749997,
+      "period": "1733089740000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 241,
+        "browser.http_requests": 256,
+        "errors.All usernames have been used.": 16,
+        "vusers.failed": 18,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.201": 7,
+        "browser.page.codes.307": 11,
+        "vusers.completed": 4,
+        "errors.locator.click: Timeout 30000ms exceeded.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089750008,
+      "firstHistogramAt": 1733089756515,
+      "lastCounterAt": 1733089759999,
+      "lastHistogramAt": 1733089758342,
+      "firstMetricAt": 1733089750008,
+      "lastMetricAt": 1733089759999,
+      "period": "1733089750000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 25801.9,
+          "max": 26980.4,
+          "count": 4,
+          "mean": 26456.3,
+          "p50": 26115.6,
+          "median": 26115.6,
+          "p75": 26643.2,
+          "p90": 26643.2,
+          "p95": 26643.2,
+          "p99": 26643.2,
+          "p999": 26643.2
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 25801.9,
+          "max": 26980.4,
+          "count": 4,
+          "mean": 26456.3,
+          "p50": 26115.6,
+          "median": 26115.6,
+          "p75": 26643.2,
+          "p90": 26643.2,
+          "p95": 26643.2,
+          "p99": 26643.2,
+          "p999": 26643.2
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1477,
+        "browser.http_requests": 1528,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "errors.All usernames have been used.": 4,
+        "vusers.failed": 11,
+        "errors.locator.click: Timeout 30000ms exceeded.": 7,
+        "browser.page.codes.401": 17,
+        "browser.page.codes.307": 37,
+        "browser.page.codes.204": 1,
+        "vusers.completed": 5
+      },
+      "rates": {},
+      "firstCounterAt": 1733089760012,
+      "firstHistogramAt": 1733089761930,
+      "lastCounterAt": 1733089769930,
+      "lastHistogramAt": 1733089763233,
+      "firstMetricAt": 1733089760012,
+      "lastMetricAt": 1733089769930,
+      "period": "1733089760000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 25681.7,
+          "max": 28921.1,
+          "count": 5,
+          "mean": 26935.5,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 25681.7,
+          "max": 28921.1,
+          "count": 5,
+          "mean": 26935.5,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 50,
+        "vusers.created": 50,
+        "browser.page.codes.200": 405,
+        "browser.http_requests": 415,
+        "browser.page.codes.307": 6,
+        "browser.page.codes.401": 3,
+        "errors.All usernames have been used.": 10,
+        "vusers.failed": 10,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089770016,
+      "lastCounterAt": 1733089779912,
+      "firstMetricAt": 1733089770016,
+      "lastMetricAt": 1733089779912,
+      "period": "1733089770000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 44,
+        "vusers.created": 44,
+        "browser.page.codes.200": 56,
+        "browser.http_requests": 62,
+        "errors.All usernames have been used.": 1,
+        "vusers.failed": 1,
+        "browser.page.codes.201": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089780526,
+      "lastCounterAt": 1733089787325,
+      "firstMetricAt": 1733089780526,
+      "lastMetricAt": 1733089787325,
+      "period": "1733089780000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 73,
+        "vusers.created": 73,
+        "browser.page.codes.200": 625,
+        "browser.http_requests": 628,
+        "browser.page.codes.307": 4,
+        "errors.pw_failed_assertion.toBeVisible": 1,
+        "vusers.failed": 12,
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.302": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089790088,
+      "lastCounterAt": 1733089798792,
+      "firstMetricAt": 1733089790088,
+      "lastMetricAt": 1733089798792,
+      "period": "1733089790000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 64,
+        "vusers.created": 64,
+        "browser.page.codes.200": 935,
+        "browser.http_requests": 956,
+        "errors.locator.click: Timeout 30000ms exceeded.": 2,
+        "vusers.failed": 8,
+        "errors.All usernames have been used.": 6,
+        "browser.page.codes.307": 8,
+        "browser.page.codes.401": 8,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.302": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089800478,
+      "lastCounterAt": 1733089809871,
+      "firstMetricAt": 1733089800478,
+      "lastMetricAt": 1733089809871,
+      "period": "1733089800000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 62,
+        "vusers.created": 62,
+        "browser.page.codes.200": 1585,
+        "browser.http_requests": 1642,
+        "browser.page.codes.307": 32,
+        "browser.page.codes.401": 20,
+        "browser.page.codes.302": 4,
+        "errors.All usernames have been used.": 31,
+        "vusers.failed": 31,
+        "browser.page.codes.201": 2,
+        "vusers.completed": 5
+      },
+      "rates": {},
+      "firstCounterAt": 1733089810024,
+      "firstHistogramAt": 1733089817582,
+      "lastCounterAt": 1733089819998,
+      "lastHistogramAt": 1733089819733,
+      "firstMetricAt": 1733089810024,
+      "lastMetricAt": 1733089819998,
+      "period": "1733089810000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 52300.8,
+          "max": 58346.1,
+          "count": 5,
+          "mean": 54548.3,
+          "p50": 54738,
+          "median": 54738,
+          "p75": 55843.8,
+          "p90": 55843.8,
+          "p95": 55843.8,
+          "p99": 55843.8,
+          "p999": 55843.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 52300.8,
+          "max": 58346.1,
+          "count": 5,
+          "mean": 54548.3,
+          "p50": 54738,
+          "median": 54738,
+          "p75": 55843.8,
+          "p90": 55843.8,
+          "p95": 55843.8,
+          "p99": 55843.8,
+          "p999": 55843.8
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 490,
+        "browser.http_requests": 548,
+        "vusers.created_by_name.0": 56,
+        "vusers.created": 56,
+        "browser.page.codes.401": 38,
+        "browser.page.codes.307": 24,
+        "browser.page.codes.302": 2,
+        "errors.All usernames have been used.": 32,
+        "vusers.failed": 36,
+        "browser.page.codes.304": 1,
+        "errors.locator.click: Timeout 30000ms exceeded.": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089820001,
+      "lastCounterAt": 1733089829949,
+      "firstMetricAt": 1733089820001,
+      "lastMetricAt": 1733089829949,
+      "period": "1733089820000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 62,
+        "vusers.created": 62,
+        "browser.page.codes.307": 57,
+        "browser.http_requests": 1631,
+        "browser.page.codes.200": 1458,
+        "browser.page.codes.401": 99,
+        "errors.All usernames have been used.": 29,
+        "vusers.failed": 34,
+        "errors.pw_failed_assertion.toBeVisible": 2,
+        "browser.page.codes.304": 11,
+        "errors.locator.click: Timeout 30000ms exceeded.": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089830012,
+      "lastCounterAt": 1733089839945,
+      "firstMetricAt": 1733089830012,
+      "lastMetricAt": 1733089839945,
+      "period": "1733089830000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 58,
+        "vusers.created": 58,
+        "errors.All usernames have been used.": 20,
+        "vusers.failed": 25,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "browser.page.codes.200": 992,
+        "browser.http_requests": 1067,
+        "browser.page.codes.401": 47,
+        "browser.page.codes.307": 27
+      },
+      "rates": {},
+      "firstCounterAt": 1733089840092,
+      "lastCounterAt": 1733089849993,
+      "firstMetricAt": 1733089840092,
+      "lastMetricAt": 1733089849993,
+      "period": "1733089840000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 2024,
+        "browser.http_requests": 2130,
+        "vusers.created_by_name.0": 65,
+        "vusers.created": 65,
+        "browser.page.codes.401": 58,
+        "browser.page.codes.307": 50,
+        "errors.All usernames have been used.": 16,
+        "vusers.failed": 40,
+        "errors.locator.click: Timeout 30000ms exceeded.": 24,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.302": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089850020,
+      "lastCounterAt": 1733089859994,
+      "firstMetricAt": 1733089850020,
+      "lastMetricAt": 1733089859994,
+      "period": "1733089850000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 2005,
+        "browser.http_requests": 2179,
+        "vusers.created_by_name.0": 60,
+        "vusers.created": 60,
+        "browser.page.codes.307": 67,
+        "browser.page.codes.401": 92,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "vusers.failed": 8,
+        "browser.page.codes.302": 5,
+        "errors.All usernames have been used.": 3,
+        "browser.page.codes.304": 6,
+        "browser.page.codes.404": 1,
+        "browser.page.codes.204": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089860022,
+      "lastCounterAt": 1733089869994,
+      "firstMetricAt": 1733089860022,
+      "lastMetricAt": 1733089869994,
+      "period": "1733089860000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.307": 29,
+        "browser.http_requests": 1158,
+        "browser.page.codes.200": 1074,
+        "vusers.created_by_name.0": 58,
+        "vusers.created": 58,
+        "errors.All usernames have been used.": 15,
+        "vusers.failed": 22,
+        "browser.page.codes.401": 47,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.302": 5,
+        "errors.locator.click: Timeout 30000ms exceeded.": 7,
+        "browser.page.codes.404": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089870019,
+      "lastCounterAt": 1733089879888,
+      "firstMetricAt": 1733089870019,
+      "lastMetricAt": 1733089879888,
+      "period": "1733089870000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 863,
+        "browser.http_requests": 906,
+        "vusers.created_by_name.0": 59,
+        "vusers.created": 59,
+        "browser.page.codes.302": 7,
+        "errors.All usernames have been used.": 3,
+        "vusers.failed": 28,
+        "browser.page.codes.401": 14,
+        "errors.locator.click: Timeout 30000ms exceeded.": 25,
+        "browser.page.codes.307": 18,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.404": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089880033,
+      "lastCounterAt": 1733089889775,
+      "firstMetricAt": 1733089880033,
+      "lastMetricAt": 1733089889775,
+      "period": "1733089880000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 9,
+        "vusers.created": 9,
+        "browser.page.codes.200": 731,
+        "browser.http_requests": 813,
+        "browser.page.codes.404": 8,
+        "browser.page.codes.401": 44,
+        "browser.page.codes.307": 25,
+        "errors.locator.click: Timeout 30000ms exceeded.": 6,
+        "vusers.failed": 8,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.201": 2,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.302": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089890066,
+      "lastCounterAt": 1733089899864,
+      "firstMetricAt": 1733089890066,
+      "lastMetricAt": 1733089899864,
+      "period": "1733089890000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1065,
+        "browser.http_requests": 1150,
+        "errors.locator.click: Timeout 30000ms exceeded.": 10,
+        "vusers.failed": 13,
+        "browser.page.codes.401": 47,
+        "browser.page.codes.307": 32,
+        "browser.page.codes.302": 3,
+        "browser.page.codes.404": 3,
+        "vusers.completed": 1,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.201": 1,
+        "errors.All usernames have been used.": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089900450,
+      "firstHistogramAt": 1733089904723,
+      "lastCounterAt": 1733089909882,
+      "lastHistogramAt": 1733089904723,
+      "firstMetricAt": 1733089900450,
+      "lastMetricAt": 1733089909882,
+      "period": "1733089900000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 95963.8,
+          "max": 95963.8,
+          "count": 1,
+          "mean": 95963.8,
+          "p50": 95830.1,
+          "median": 95830.1,
+          "p75": 95830.1,
+          "p90": 95830.1,
+          "p95": 95830.1,
+          "p99": 95830.1,
+          "p999": 95830.1
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 95963.8,
+          "max": 95963.8,
+          "count": 1,
+          "mean": 95963.8,
+          "p50": 95830.1,
+          "median": 95830.1,
+          "p75": 95830.1,
+          "p90": 95830.1,
+          "p95": 95830.1,
+          "p99": 95830.1,
+          "p999": 95830.1
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 444,
+        "browser.http_requests": 496,
+        "browser.page.codes.401": 16,
+        "browser.page.codes.307": 25,
+        "errors.All usernames have been used.": 1,
+        "vusers.failed": 6,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "browser.page.codes.304": 5,
+        "browser.page.codes.302": 2,
+        "browser.page.codes.404": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089910336,
+      "lastCounterAt": 1733089919511,
+      "firstMetricAt": 1733089910336,
+      "lastMetricAt": 1733089919511,
+      "period": "1733089910000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1449,
+        "browser.http_requests": 1567,
+        "errors.locator.click: Timeout 30000ms exceeded.": 6,
+        "vusers.failed": 6,
+        "browser.page.codes.401": 74,
+        "browser.page.codes.307": 36,
+        "browser.page.codes.304": 6,
+        "browser.page.codes.302": 3,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089920006,
+      "firstHistogramAt": 1733089924625,
+      "lastCounterAt": 1733089929823,
+      "lastHistogramAt": 1733089924625,
+      "firstMetricAt": 1733089920006,
+      "lastMetricAt": 1733089929823,
+      "period": "1733089920000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 107215.3,
+          "max": 107215.3,
+          "count": 1,
+          "mean": 107215.3,
+          "p50": 108048.6,
+          "median": 108048.6,
+          "p75": 108048.6,
+          "p90": 108048.6,
+          "p95": 108048.6,
+          "p99": 108048.6,
+          "p999": 108048.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 107215.3,
+          "max": 107215.3,
+          "count": 1,
+          "mean": 107215.3,
+          "p50": 108048.6,
+          "median": 108048.6,
+          "p75": 108048.6,
+          "p90": 108048.6,
+          "p95": 108048.6,
+          "p99": 108048.6,
+          "p999": 108048.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1079,
+        "browser.http_requests": 1208,
+        "browser.page.codes.307": 32,
+        "browser.page.codes.401": 85,
+        "errors.locator.click: Timeout 30000ms exceeded.": 11,
+        "vusers.failed": 11,
+        "browser.page.codes.302": 2,
+        "browser.page.codes.304": 12
+      },
+      "rates": {},
+      "firstCounterAt": 1733089930012,
+      "lastCounterAt": 1733089939881,
+      "firstMetricAt": 1733089930012,
+      "lastMetricAt": 1733089939881,
+      "period": "1733089930000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1037,
+        "browser.http_requests": 1128,
+        "browser.page.codes.401": 49,
+        "browser.page.codes.307": 33,
+        "errors.All usernames have been used.": 1,
+        "vusers.failed": 6,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "browser.page.codes.404": 2,
+        "browser.page.codes.302": 1,
+        "browser.page.codes.304": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089940099,
+      "lastCounterAt": 1733089949834,
+      "firstMetricAt": 1733089940099,
+      "lastMetricAt": 1733089949834,
+      "period": "1733089940000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1304,
+        "browser.http_requests": 1434,
+        "browser.page.codes.401": 76,
+        "errors.locator.click: Timeout 30000ms exceeded.": 14,
+        "vusers.failed": 17,
+        "browser.page.codes.307": 43,
+        "browser.page.codes.304": 2,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.302": 5,
+        "browser.page.codes.404": 1,
+        "errors.pw_failed_assertion.toBeVisible": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089950051,
+      "lastCounterAt": 1733089959994,
+      "firstMetricAt": 1733089950051,
+      "lastMetricAt": 1733089959994,
+      "period": "1733089950000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1095,
+        "browser.http_requests": 1196,
+        "browser.page.codes.307": 36,
+        "browser.page.codes.401": 61,
+        "errors.locator.click: Timeout 30000ms exceeded.": 7,
+        "vusers.failed": 9,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.201": 1,
+        "browser.page.codes.302": 3,
+        "errors.All usernames have been used.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089960002,
+      "lastCounterAt": 1733089969433,
+      "firstMetricAt": 1733089960002,
+      "lastMetricAt": 1733089969433,
+      "period": "1733089960000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "vusers.failed": 19,
+        "browser.page.codes.200": 965,
+        "browser.http_requests": 1040,
+        "browser.page.codes.401": 37,
+        "errors.pw_failed_assertion.toBeVisible": 5,
+        "browser.page.codes.307": 24,
+        "browser.page.codes.304": 6,
+        "errors.All usernames have been used.": 5,
+        "browser.page.codes.302": 1,
+        "browser.page.codes.404": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089971211,
+      "lastCounterAt": 1733089979998,
+      "firstMetricAt": 1733089971211,
+      "lastMetricAt": 1733089979998,
+      "period": "1733089970000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1531,
+        "browser.http_requests": 1586,
+        "browser.page.codes.401": 23,
+        "browser.page.codes.307": 22,
+        "errors.All usernames have been used.": 32,
+        "vusers.failed": 42,
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "browser.page.codes.304": 6,
+        "browser.page.codes.404": 4,
+        "browser.page.codes.204": 2,
+        "errors.pw_failed_assertion.toBeVisible": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089980007,
+      "lastCounterAt": 1733089989955,
+      "firstMetricAt": 1733089980007,
+      "lastMetricAt": 1733089989955,
+      "period": "1733089980000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1849,
+        "browser.http_requests": 1925,
+        "errors.All usernames have been used.": 19,
+        "vusers.failed": 39,
+        "errors.locator.click: Timeout 30000ms exceeded.": 16,
+        "browser.page.codes.307": 29,
+        "browser.page.codes.302": 3,
+        "browser.page.codes.401": 44,
+        "errors.pw_failed_assertion.toBeVisible": 4,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.201": 3,
+        "browser.page.codes.304": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089990021,
+      "lastCounterAt": 1733089999052,
+      "firstMetricAt": 1733089990021,
+      "lastMetricAt": 1733089999052,
+      "period": "1733089990000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1177,
+        "browser.http_requests": 1409,
+        "browser.page.codes.307": 50,
+        "errors.All usernames have been used.": 24,
+        "vusers.failed": 26,
+        "browser.page.codes.401": 165,
+        "browser.page.codes.302": 9,
+        "browser.page.codes.404": 1,
+        "errors.locator.click: Timeout 30000ms exceeded.": 2,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090000013,
+      "firstHistogramAt": 1733090008495,
+      "lastCounterAt": 1733090009800,
+      "lastHistogramAt": 1733090008495,
+      "firstMetricAt": 1733090000013,
+      "lastMetricAt": 1733090009800,
+      "period": "1733090000000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 170894.5,
+          "max": 170894.5,
+          "count": 1,
+          "mean": 170894.5,
+          "p50": 171159.6,
+          "median": 171159.6,
+          "p75": 171159.6,
+          "p90": 171159.6,
+          "p95": 171159.6,
+          "p99": 171159.6,
+          "p999": 171159.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 170894.5,
+          "max": 170894.5,
+          "count": 1,
+          "mean": 170894.5,
+          "p50": 171159.6,
+          "median": 171159.6,
+          "p75": 171159.6,
+          "p90": 171159.6,
+          "p95": 171159.6,
+          "p99": 171159.6,
+          "p999": 171159.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.401": 158,
+        "browser.http_requests": 1066,
+        "browser.page.codes.307": 41,
+        "browser.page.codes.404": 3,
+        "browser.page.codes.200": 867,
+        "browser.page.codes.304": 6,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 7,
+        "browser.page.codes.302": 1,
+        "errors.locator.click: Timeout 30000ms exceeded.": 1,
+        "browser.page.codes.204": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090010020,
+      "lastCounterAt": 1733090019994,
+      "firstMetricAt": 1733090010020,
+      "lastMetricAt": 1733090019994,
+      "period": "1733090010000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1306,
+        "browser.http_requests": 1527,
+        "errors.locator.click: Timeout 30000ms exceeded.": 19,
+        "vusers.failed": 50,
+        "errors.All usernames have been used.": 31,
+        "browser.page.codes.401": 152,
+        "browser.page.codes.307": 55,
+        "browser.page.codes.304": 4,
+        "browser.page.codes.502": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090020008,
+      "lastCounterAt": 1733090029992,
+      "firstMetricAt": 1733090020008,
+      "lastMetricAt": 1733090029992,
+      "period": "1733090020000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 874,
+        "browser.http_requests": 933,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 35,
+        "browser.page.codes.307": 28,
+        "errors.locator.click: Timeout 30000ms exceeded.": 26,
+        "browser.page.codes.302": 11,
+        "browser.page.codes.401": 25,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090030009,
+      "lastCounterAt": 1733090039892,
+      "firstMetricAt": 1733090030009,
+      "lastMetricAt": 1733090039892,
+      "period": "1733090030000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.http_requests": 1355,
+        "browser.page.codes.200": 1285,
+        "browser.page.codes.404": 5,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 9,
+        "browser.page.codes.401": 28,
+        "browser.page.codes.307": 29,
+        "browser.page.codes.302": 3,
+        "errors.pw_failed_assertion.toBeVisible": 3,
+        "browser.page.codes.204": 1,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090040110,
+      "firstHistogramAt": 1733090046262,
+      "lastCounterAt": 1733090049990,
+      "lastHistogramAt": 1733090046262,
+      "firstMetricAt": 1733090040110,
+      "lastMetricAt": 1733090049990,
+      "period": "1733090040000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 199165.7,
+          "max": 199165.7,
+          "count": 1,
+          "mean": 199165.7,
+          "p50": 200858.7,
+          "median": 200858.7,
+          "p75": 200858.7,
+          "p90": 200858.7,
+          "p95": 200858.7,
+          "p99": 200858.7,
+          "p999": 200858.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 199165.7,
+          "max": 199165.7,
+          "count": 1,
+          "mean": 199165.7,
+          "p50": 200858.7,
+          "median": 200858.7,
+          "p75": 200858.7,
+          "p90": 200858.7,
+          "p95": 200858.7,
+          "p99": 200858.7,
+          "p999": 200858.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1741,
+        "browser.http_requests": 1831,
+        "errors.All usernames have been used.": 34,
+        "vusers.failed": 47,
+        "browser.page.codes.401": 34,
+        "browser.page.codes.302": 3,
+        "browser.page.codes.307": 38,
+        "browser.page.codes.404": 7,
+        "errors.locator.click: Timeout 30000ms exceeded.": 13,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.201": 1,
+        "browser.page.codes.304": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733090050000,
+      "firstHistogramAt": 1733090057744,
+      "lastCounterAt": 1733090059955,
+      "lastHistogramAt": 1733090059910,
+      "firstMetricAt": 1733090050000,
+      "lastMetricAt": 1733090059955,
+      "period": "1733090050000",
+      "summaries": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 161.4,
+          "max": 373.5,
+          "count": 6,
+          "mean": 254.4,
+          "p50": 210.6,
+          "median": 210.6,
+          "p75": 273.2,
+          "p90": 295.9,
+          "p95": 295.9,
+          "p99": 295.9,
+          "p999": 295.9
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 178.6,
+          "max": 391.5,
+          "count": 6,
+          "mean": 281,
+          "p50": 262.5,
+          "median": 262.5,
+          "p75": 308,
+          "p90": 314.2,
+          "p95": 314.2,
+          "p99": 314.2,
+          "p999": 314.2
+        }
+      },
+      "histograms": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 161.4,
+          "max": 373.5,
+          "count": 6,
+          "mean": 254.4,
+          "p50": 210.6,
+          "median": 210.6,
+          "p75": 273.2,
+          "p90": 295.9,
+          "p95": 295.9,
+          "p99": 295.9,
+          "p999": 295.9
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 178.6,
+          "max": 391.5,
+          "count": 6,
+          "mean": 281,
+          "p50": 262.5,
+          "median": 262.5,
+          "p75": 308,
+          "p90": 314.2,
+          "p95": 314.2,
+          "p99": 314.2,
+          "p999": 314.2
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.All usernames have been used.": 28,
+        "vusers.failed": 44,
+        "browser.page.codes.307": 57,
+        "browser.http_requests": 737,
+        "browser.page.codes.200": 571,
+        "errors.pw_failed_assertion.toBeVisible": 7,
+        "browser.page.codes.401": 107,
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090060005,
+      "firstHistogramAt": 1733090060357,
+      "lastCounterAt": 1733090069940,
+      "lastHistogramAt": 1733090069840,
+      "firstMetricAt": 1733090060005,
+      "lastMetricAt": 1733090069940,
+      "period": "1733090060000",
+      "summaries": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 144.7,
+          "max": 607.8,
+          "count": 20,
+          "mean": 276.5,
+          "p50": 237.5,
+          "median": 237.5,
+          "p75": 278.7,
+          "p90": 441.5,
+          "p95": 572.6,
+          "p99": 572.6,
+          "p999": 572.6
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 166.7,
+          "max": 650.9,
+          "count": 20,
+          "mean": 301.1,
+          "p50": 257.3,
+          "median": 257.3,
+          "p75": 301.9,
+          "p90": 459.5,
+          "p95": 620.3,
+          "p99": 620.3,
+          "p999": 620.3
+        }
+      },
+      "histograms": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 144.7,
+          "max": 607.8,
+          "count": 20,
+          "mean": 276.5,
+          "p50": 237.5,
+          "median": 237.5,
+          "p75": 278.7,
+          "p90": 441.5,
+          "p95": 572.6,
+          "p99": 572.6,
+          "p999": 572.6
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 166.7,
+          "max": 650.9,
+          "count": 20,
+          "mean": 301.1,
+          "p50": 257.3,
+          "median": 257.3,
+          "p75": 301.9,
+          "p90": 459.5,
+          "p95": 620.3,
+          "p99": 620.3,
+          "p999": 620.3
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.All usernames have been used.": 22,
+        "vusers.failed": 44,
+        "errors.pw_failed_assertion.toBeVisible": 19,
+        "errors.locator.click: Timeout 30000ms exceeded.": 3,
+        "browser.page.codes.200": 257,
+        "browser.http_requests": 267,
+        "browser.page.codes.307": 8,
+        "vusers.completed": 1,
+        "browser.page.codes.201": 1,
+        "browser.page.codes.401": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733090070015,
+      "firstHistogramAt": 1733090070393,
+      "lastCounterAt": 1733090079819,
+      "lastHistogramAt": 1733090078008,
+      "firstMetricAt": 1733090070015,
+      "lastMetricAt": 1733090079819,
+      "period": "1733090070000",
+      "summaries": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 130.9,
+          "max": 237.6,
+          "count": 10,
+          "mean": 178.9,
+          "p50": 183.1,
+          "median": 183.1,
+          "p75": 186.8,
+          "p90": 202.4,
+          "p95": 202.4,
+          "p99": 202.4,
+          "p999": 202.4
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 146.5,
+          "max": 253,
+          "count": 10,
+          "mean": 200.5,
+          "p50": 202.4,
+          "median": 202.4,
+          "p75": 206.5,
+          "p90": 232.8,
+          "p95": 232.8,
+          "p99": 232.8,
+          "p999": 232.8
+        },
+        "vusers.session_length": {
+          "min": 205868.3,
+          "max": 205868.3,
+          "count": 1,
+          "mean": 205868.3,
+          "p50": 204916.5,
+          "median": 204916.5,
+          "p75": 204916.5,
+          "p90": 204916.5,
+          "p95": 204916.5,
+          "p99": 204916.5,
+          "p999": 204916.5
+        }
+      },
+      "histograms": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 130.9,
+          "max": 237.6,
+          "count": 10,
+          "mean": 178.9,
+          "p50": 183.1,
+          "median": 183.1,
+          "p75": 186.8,
+          "p90": 202.4,
+          "p95": 202.4,
+          "p99": 202.4,
+          "p999": 202.4
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 146.5,
+          "max": 253,
+          "count": 10,
+          "mean": 200.5,
+          "p50": 202.4,
+          "median": 202.4,
+          "p75": 206.5,
+          "p90": 232.8,
+          "p95": 232.8,
+          "p99": 232.8,
+          "p999": 232.8
+        },
+        "vusers.session_length": {
+          "min": 205868.3,
+          "max": 205868.3,
+          "count": 1,
+          "mean": 205868.3,
+          "p50": 204916.5,
+          "median": 204916.5,
+          "p75": 204916.5,
+          "p90": 204916.5,
+          "p95": 204916.5,
+          "p99": 204916.5,
+          "p999": 204916.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.pw_failed_assertion.toBeVisible": 10,
+        "vusers.failed": 28,
+        "errors.locator.click: Timeout 30000ms exceeded.": 18,
+        "browser.page.codes.200": 67,
+        "browser.page.codes.201": 7,
+        "browser.http_requests": 76,
+        "browser.page.codes.307": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733090080180,
+      "lastCounterAt": 1733090089971,
+      "firstMetricAt": 1733090080180,
+      "lastMetricAt": 1733090089971,
+      "period": "1733090080000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 21,
+        "browser.http_requests": 36,
+        "browser.page.codes.307": 13,
+        "vusers.failed": 3,
+        "vusers.completed": 8,
+        "errors.locator.click: Timeout 30000ms exceeded.": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733090090039,
+      "firstHistogramAt": 1733090090062,
+      "lastCounterAt": 1733090097614,
+      "lastHistogramAt": 1733090097614,
+      "firstMetricAt": 1733090090039,
+      "lastMetricAt": 1733090097614,
+      "period": "1733090090000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 209206.3,
+          "max": 226818.5,
+          "count": 8,
+          "mean": 218595.2,
+          "p50": 217588.2,
+          "median": 217588.2,
+          "p75": 221983.9,
+          "p90": 221983.9,
+          "p95": 221983.9,
+          "p99": 221983.9,
+          "p999": 221983.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 209206.3,
+          "max": 226818.5,
+          "count": 8,
+          "mean": 218595.2,
+          "p50": 217588.2,
+          "median": 217588.2,
+          "p75": 221983.9,
+          "p90": 221983.9,
+          "p95": 221983.9,
+          "p99": 221983.9,
+          "p999": 221983.9
+        }
+      }
+    }
+  ],
+  "name": "report.json"
+};
+    const editor = ace.edit("editor");
+    editor.getSession().setMode("ace/mode/javascript");
+    editor.setValue(JSON.stringify(Report, null, 2));
+    editor.gotoLine(1);
+    editor.setHighlightActiveLine(false);
+    editor.setOption("maxLines", 50);
+    editor.setTheme("ace/theme/clouds_midnight");
+
+    // let sanitizedName = Report.name.replace(/_/, " ").split(" ").map((w) => w[0].toUpperCase()+w.substring(1,w.length)).join(" ")
+    $('#report-name').html(Report.name.replace(".json", ""))
+
+    const l = _;
+
+    const chartBgColors = {
+      red: "rgba(255, 99, 132, 0.2)",
+      orange: "rgba(255, 159, 64, 0.2)",
+      yellow: "rgba(255, 205, 86, 0.2)",
+      green: "rgba(75, 192, 192, 0.2)",
+      blue: "rgba(54, 162, 235, 0.2)",
+    };
+
+    const chartBorderColors = {
+      green: "#24EB70",
+      red: "#ff0000",
+      orange: "#FF6D1B",
+      purple: "#6100FF",
+      blue: "#0047FF"
+    };
+
+    const getHttpColor = (httpCode) => {
+      const code = parseInt(httpCode, 10);
+
+      if (code >= 100 && code < 200) {
+        return chartBorderColors.blue;
+      } else if (code >= 200 && code < 300) {
+        return chartBorderColors.green;
+      } else if (code >= 300 && code < 400) {
+        return chartBorderColors.red;
+      } else if (code >= 400 && code < 500) {
+        return chartBorderColors.purple;
+      }
+
+      return chartBorderColors.orange;
+    }
+
+    const getLatencyColor = (latency) => {
+      switch (latency) {
+        case "min":
+          return chartBorderColors.red;
+        case "max":
+          return chartBorderColors.orange;
+        case "median":
+          return chartBorderColors.purple;
+        case "p95":
+          return chartBorderColors.green;
+        case "p99":
+          return chartBorderColors.green;
+        default:
+          return '';
+      }
+    };
+
+    const getCustomStats = (stats) =>
+      l.omitBy(
+        stats,
+        (_, key) =>
+          key.startsWith("errors.") ||
+          key.startsWith("core.") ||
+          key.startsWith("engine.")
+      );
+
+    const scenarioCounts = l.pickBy(Report.aggregate.counters, (_, key) =>
+      key.startsWith("vusers.created_by_name")
+    );
+
+    if (l.size(scenarioCounts) > 0) {
+      l.each(scenarioCounts, function (count, key) {
+        const [, , name] = key.split(".");
+
+        const $tdName = $("<td>" + name + "</td>");
+        const percentage =
+          Math.round(
+            (count / Report.aggregate.counters["vusers.created"]) *
+            100 *
+            1000
+          ) / 1000;
+        const $tdCount = $("<td>" + count + " (" + percentage + "%)" + "</td>");
+        $("<tr></tr>")
+          .append($tdName)
+          .append($tdCount)
+          .appendTo($("#scenarioCounts"));
+      });
+    } else {
+      $("#scenarioCountsContainer").hide();
+    }
+
+    const httpCodes = l.pickBy(Report.aggregate.counters, (_, key) =>
+      key.startsWith("http.codes")
+    );
+
+    const errors = l.pickBy(Report.aggregate.counters, (_, key) =>
+      key.startsWith("errors.")
+    );
+    if (l.size(errors) > 0) {
+      l.each(errors, function (count, error) {
+        const [, errorDetail] = error.split("errors.");
+
+        $("<tr></tr>")
+          .append($("<td>" + errorDetail + "</td>"))
+          .append($("<td>" + count + "</td>"))
+          .appendTo($("#errors"));
+      });
+    } else {
+      $("#errorsContainer > p").html(
+        "&#10004; Test completed without network or OS errors."
+      );
+    }
+
+    const getTimePeriodAggregates = (summaries) => {
+      const summary =
+        summaries["socketio.response_time"] ||
+        summaries["http.response_time"];
+      const metrics = ["min", "max", "median", "p95", "p99"];
+
+      return l.pickBy(summary, (_, key) => metrics.includes(key));
+    };
+
+    const getLatencyDistribution = (data) => {
+      return l.reduce(
+        data,
+        (acc, value, key) => {
+          acc.labels.push(key);
+          acc.values.push(value);
+
+          return acc;
+        },
+        { labels: [], values: [] }
+      );
+    };
+
+    const randomRgbColor = () => {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+
+      return "rgb(" + r + ", " + g + ", " + b + ")";
+    };
+
+    const latencyDistributionData = getLatencyDistribution(
+      getTimePeriodAggregates(Report.aggregate.summaries)
+    );
+
+    const latencyAtIntervalsData = (intermediates = []) => {
+      const data = intermediates.reduce(
+        (acc, entry, idx) => {
+          const latencies = getTimePeriodAggregates(entry.summaries);
+
+          l.each(latencies, (latency, key) => {
+            acc.values[key] = acc.values[key] || [];
+
+            acc.values[key].push(latency);
+          });
+
+          acc.labels.push((idx + 1) * 10);
+
+          return acc;
+        },
+        { labels: [], values: {} }
+      );
+
+      return {
+        labels: data.labels,
+        datasets: l.map(data.values, (entry, key) => {
+          const color = getLatencyColor(key);
+
+          return {
+            label: key,
+            data: entry,
+            fill: false,
+            backgroundColor: color,
+            borderColor: color,
+            tension: 0.5,
+          };
+        })
+      };
+    };
+
+
+    const getMeanRpsData = (intermediates = []) => {
+      const data = intermediates.reduce(
+        (acc, entry, idx) => {
+          const count =
+            entry.rates["http.request_rate"] ||
+            entry.rates["socketio.emit_rate"] ||
+            entry.rates["websocket.send_rate"] ||
+            0;
+
+          acc.labels.push((idx + 1) * 10);
+          acc.values.push(count);
+
+          return acc;
+        },
+        { labels: [], values: [] }
+      );
+
+      return {
+        labels: data.labels,
+        datasets: [
+          {
+            data: data.values,
+            fill: false,
+            borderColor: "#0047FF",
+            tension: 0.5,
+          },
+        ],
+      };
+    };
+
+    const getHttpCodesData = (counters) => {
+      const httpCodes = l.pickBy(counters, (_, key) =>
+        key.startsWith("http.codes")
+      );
+      const labels = [];
+      const data = [];
+      const bgColors = [
+        "rgba(54, 232, 235, 0.5)",
+        "rgba(54, 235, 93, 0.5)",
+        "rgba(229, 235, 54, 0.5)",
+        "rgba(166, 54, 235, 0.5)",
+        "rgba(235, 54, 69, 0.5)",
+      ];
+
+      if (l.size(httpCodes) > 0) {
+        l.each(httpCodes, function (count, key) {
+          let [, , , code] = key.split(".");
+          code = parseInt(code, 10);
+
+          labels.push(code);
+          data.push(count);
+        });
+      }
+
+      return {
+        labels,
+        datasets: [
+          {
+            backgroundColor: labels.map(getHttpColor),
+            hoverOffset: 4,
+            data,
+          },
+        ],
+      };
+    };
+
+    const timeFormat = "DD[/]MM[/]YYYY, hh:mm:ss"
+    $("#timestamp").html(
+      moment(Report.aggregate.period).format(timeFormat)
+    );
+    $('#copy-json').on("click", (e) => {
+      navigator.clipboard.writeText(JSON.stringify(Report, null, 2));
+
+      $('#copy-json').html(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="" aria-labelledby="icon_start" x="0px" y="0px" role="img" class="inline false"><title id="icon_start" lang="en"></title><g fill="currentColor"><path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z"></path></g></svg>`)
+      setTimeout(function () {
+        $('#copy-json').html(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="" aria-labelledby="icon_start" x="0px" y="0px" role="img" class="inline false"><title id="icon_start" lang="en"></title><g fill="currentColor"><path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z"></path></g></svg>`)
+      }, 1000)
+    })
+
+
+    // tabs logic
+    $("#charts-tab").on("click", (e) => {
+      $("#charts-tab").addClass("active")
+      $("#json-tab").removeClass("active")
+
+      $("#index-tree").removeClass("hidden")
+      $("#charts-col").removeClass("hidden")
+      $("#json-output").addClass("hidden")
+    })
+
+    $("#json-tab").on("click", (e) => {
+      $("#json-tab").addClass("active")
+      $("#charts-tab").removeClass("active")
+
+      $("#index-tree").addClass("hidden")
+      $("#charts-col").addClass("hidden")
+      $("#json-output").removeClass("hidden")
+    })
+
+    //counters toggle
+    $("#counters-title").on("click", (e) => {
+      $('#customCountersTable').hasClass("hidden") ? $('#customCountersTable').removeClass("hidden") : $('#customCountersTable').addClass("hidden")
+      $('#counters-title').hasClass("chevron-down") ? $('#counters-title').removeClass("chevron-down") : $('#counters-title').addClass("chevron-down")
+    })
+
+
+    const iconDuration = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="Duration" aria-labelledby="icon_duration" x="0px" y="0px" role="img"><title id="icon_duration" lang="en">Duration</title><g fill="#9B9B9B"><path d="M15 1H9V3H15V1ZM11 14H13V8H11V14ZM19.03 7.39L20.45 5.97C20.02 5.46 19.55 4.98 19.04 4.56L17.62 5.98C16.07 4.74 14.12 4 12 4C7.03 4 3 8.03 3 13C3 17.97 7.02 22 12 22C16.98 22 21 17.97 21 13C21 10.88 20.26 8.93 19.03 7.39ZM12 20C8.13 20 5 16.87 5 13C5 9.13 8.13 6 12 6C15.87 6 19 9.13 19 13C19 16.87 15.87 20 12 20Z"></path></g></svg>`
+    const checkCircle = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+      </svg>`
+
+    const xCircle = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="Regions" aria-labelledby="icon_regions" x="0px" y="0px" role="img"><title id="icon_regions" lang="en">Regions</title><g fill="#9B9B9B"><path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12C22 6.47 17.53 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"></path></g></svg>`
+    const iconStarted = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="Started" aria-labelledby="icon_started" x="0px" y="0px" role="img"><title id="icon_started" lang="en">Started</title><g fill="#9B9B9B"><path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM12.5 7H11V13L16.25 16.15L17 14.92L12.5 12.25V7Z"></path></g></svg>`
+    const iconFinished = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="Finished" aria-labelledby="icon_finished" x="0px" y="0px" role="img"><title id="icon_finished" lang="en">Finished</title><g fill="#9B9B9B"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z"></path></g></svg>`
+    // summary blocks
+
+    const timeStarted = moment(Report.aggregate.firstMetricAt)
+    const timeFinished = moment(Report.aggregate.lastMetricAt)
+
+    function formatDuration(s) {
+      var min = Math.floor(s / 60)
+      var sec = s - min * 60
+      return min + "m " + sec + "s"
+    }
+
+    const summaryInfo = [
+      { icon: iconDuration, name: "Duration", value: formatDuration(timeFinished.diff(timeStarted, "seconds")) || "n/a" },
+      { icon: iconStarted, name: "Started", value: timeStarted.format(timeFormat) || "n/a" },
+      { icon: iconFinished, name: "Completed", value: timeFinished.format(timeFormat) || "n/a" },
+      { icon: xCircle, name: "Errors", value: !errors ? "n/a" : errors.length ? errors.length : "0" },
+    ]
+
+    function summaryBlock(block) {
+      return (
+        `<li class="summary-block flex flex-auto items-center justify-start rounded py-2 px-3 mb-3 border-gray" >
+              <div class="mr-3 text-gray-default">`+
+        block.icon +
+        `</div>
+              <div><div class="text-gray-default text-xsm">`+
+        block.name +
+        `</div>
+              <div class="text-xsm">
+                `+ block.value + `
+              </div>
+              </div>
+        </li>`
+      )
+    }
+
+    summaryInfo.forEach((block) => {
+      const appendage = summaryBlock(block)
+      $("#summary-blocks").append(appendage);
+    })
+
+
+    if (l.size(errors) > 0) {
+      const getErrorsAtIntervalsData = (intermediates = []) => {
+        const data = intermediates.reduce(
+          (acc, entry, idx) => {
+            const errorsCounters = l.pickBy(entry.counters, (_, key) =>
+              key.startsWith("errors.")
+            );
+
+            l.each(errorsCounters, (count, key) => {
+              const [, errorDetail] = key.split("errors.");
+
+              acc.values[errorDetail] = acc.values[errorDetail] || [];
+
+              acc.values[errorDetail].push(count);
+            });
+
+            acc.labels.push((idx + 1) * 10);
+
+            return acc;
+          },
+          { labels: [], values: {} }
+        );
+
+        return {
+          labels: data.labels,
+          datasets: l.map(data.values, (entry, key) => {
+            return {
+              label: key,
+              data: entry,
+              fill: false,
+              backgroundColor: Object.values(chartBorderColors),
+              borderColor: Object.values(chartBorderColors),
+              tension: 0.5,
+            };
+          })
+        };
+      };
+
+
+      new Chart(document.getElementById("errorsAtIntervalsChart"), {
+        type: "line",
+        data: getErrorsAtIntervalsData(Report.intermediate),
+        options: {
+          plugins: { legend: { position: "bottom" } },
+          aspectRatio: 3.5,
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "count",
+              },
+            },
+          },
+        },
+      });
+    }
+    !errors.length && $("#errorsChartsRow").hide();
+
+    const unorderedCustomCounters = Report.aggregate.counters;
+    const customCounters = Object.keys(unorderedCustomCounters).sort().reduce(
+      (obj, key) => {
+        obj[key] = unorderedCustomCounters[key];
+        return obj;
+      },
+      {}
+    );
+
+    if (l.size(customCounters) > 0) {
+      let rows = [];
+      l.each(customCounters, function (count, key) {
+        const row = $("<tr></tr>")
+          .append($('<td class="text-xsm whitespace-nowrap p-2 font-normal text-white" colspan="6">' + key + '</td>'))
+          .append($('<td class="text-xsm whitespace-nowrap p-2 font-normal text-white" colspan="6">' + count + '</td>'));
+        rows.push(row);
+      });
+
+
+
+      rows.forEach((row) => row.appendTo($("#customCountersTable")));
+      const getCustomStatsAtIntervalsData = (intermediates = []) => {
+        const data = intermediates.reduce(
+          (acc, entry, idx) => {
+            const customCounters = entry.counters;
+
+            l.each(customCounters, (count, key) => {
+              acc.values[key] = acc.values[key] || [];
+              acc.values[key].push(count);
+            });
+
+            acc.labels.push((idx + 1) * 10);
+            return acc;
+          },
+          { labels: [], values: {} }
+        );
+        return {
+          labels: data.labels,
+          datasets: l.map(data.values, (entry, key) => {
+            color = "#0047FF";
+            return {
+              label: key,
+              data: entry,
+              fill: false,
+              backgroundColor: color,
+              borderColor: color,
+              tension: 0.5,
+            };
+          }),
+        };
+      };
+
+      $("#expandCustomCountersRow").on("click", (e) => {
+        e.preventDefault();
+        $("#customCountersTable tr").removeClass("hidden");
+        $("#expandCustomCountersRow").addClass("hidden");
+      });
+
+      // create intermediate charts array with name and type
+      let intervalChartsArray = []
+      Report.intermediate.forEach((interval, i) => {
+        Object.keys(interval.counters).forEach((counter) => {
+          intervalChartsArray.find((chart) => chart.name == counter) || intervalChartsArray.push({ name: counter, data: [], type: "interval" })
+
+        })
+      })
+
+      let intervalChartsSet = []
+      intervalChartsArray.forEach((c) => {
+        if (!intervalChartsSet.includes(c)) {
+          intervalChartsSet.push(c);
+        }
+      });
+
+      // add data per interval for each chart 
+      intervalChartsSet.forEach((chart, i) => {
+        Report.intermediate.forEach((interval, j) => {
+          const value = interval.counters[chart.name] || 0
+          intervalChartsSet[i].data.push({ counters: { [chart.name]: value } })
+        })
+      })
+
+      // add summary data 
+      let aggregateChartsArray = []
+      Object.keys(Report.aggregate.summaries).forEach((summary) => {
+        const data = Report.aggregate.summaries[summary]
+        aggregateChartsArray.push({ name: summary, data: data, type: "aggregate" })
+
+      })
+
+      let chartsSet = [...intervalChartsSet, ...aggregateChartsArray].sort((a, b) => a.name < b.name ? -1 : 1)
+
+      const sanitizer = /[.| |'|"]/g
+      chartsSet.forEach((chart) => {
+        $('#customCountersAtIntervalsChart').append("<div id='" + chart.name.replaceAll(sanitizer, "-")
+          + "-wrapper' class='text-xsm rounded' style='border: 1px solid #383838;'><div class='p-2 text-gray-default' style='border-bottom: 1px solid #383838; background-color: #2b2b2b; font-weight: 500;''>"
+          + chart.name + "</div><div class='p-4'><canvas id='" + chart.name + "'>unable to create chart</canvas></div></div>")
+
+        if (chart.type === 'interval') {
+          new Chart(document.getElementById(chart.name), {
+            type: "bar",
+            data: getCustomStatsAtIntervalsData(chart.data),
+            options: {
+              barPercentage: 0.2,
+              plugins: { legend: { display: false } },
+              aspectRatio: 2.5,
+              responsive: true,
+              maintainAspectRatio: true,
+              scales: {
+                x: {
+                  title: {
+                    display: true,
+                    text: "time"
+                  },
+                  ticks: {
+                    color: '#9b9b9b',
+                  },
+                  grid: {
+                    color: 'transparent',
+                    borderColor: '#383838',
+                  },
+                },
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "count",
+                  },
+                  ticks: {
+                    color: '#9b9b9b',
+                    precision: 0,
+                  },
+                  grid: {
+                    color: '#383838',
+                    borderColor: '#383838',
+                  },
+                },
+              },
+            },
+          });
+        } else if (chart.type === 'aggregate') {
+          const { labels, values } = getLatencyDistribution(
+            l.pickBy(chart.data, (_, key) =>
+              ["min", "max", "median", "p95", "p99"].includes(key)
+            )
+          );
+          new Chart(document.getElementById(chart.name), {
+            type: "bar",
+            data: {
+              labels: labels,
+              datasets: [
+                {
+                  data: values,
+                  backgroundColor: Object.values(chartBorderColors),
+                  borderColor: Object.values(chartBgColors),
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              plugins: { legend: { display: false } },
+              barPercentage: 0.4,
+              scales: {
+                x: {
+                  ticks: {
+                    color: '#9b9b9b',
+                    precision: 0,
+                  },
+                  grid: {
+                    color: 'transparent',
+                    borderColor: '#383838',
+                  },
+                },
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "ms",
+                  },
+                  ticks: {
+                    color: '#9b9b9b',
+                    precision: 0,
+                  },
+                  grid: {
+                    color: '#383838',
+                    borderColor: '#383838',
+                  },
+                },
+              },
+            },
+          })
+        }
+      })
+
+      // parse out index tabs from custom counters for index nav
+      const parentRegex = /^([^.| ]+)/
+      const nodeRegex = /[ |\.](.*)/
+
+      let indexSet = new Set(chartsSet.map((c) => {
+        return c.name.match(parentRegex)[0]
+      }))
+
+      // create tree from index set
+      let indexTree = Array.from(indexSet).sort().reduce((key, value) => {
+        return { ...key, [value]: [] };
+      }, {});
+
+      // fill tree with custom counters according to parent tab
+      chartsSet.forEach((chart) => {
+        const node = chart.name
+        const parent = node ? chart.name.match(parentRegex)[0] : chart.name
+        indexTree[parent] && indexTree[parent].push({ name: node, type: chart.type })
+      })
+
+      // sort child nodes for each tab
+      for (let [key, value] of Object.entries(indexTree)) {
+        indexTree = {
+          ...indexTree, [key]: value.sort()
+        }
+      }
+
+      const chevron = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-label="Toggle charts list for vusers metrics (5)" aria-labelledby="icon_toggle_vusers metrics (5)" x="0px" y="0px" role="img"><title id="icon_toggle_vusers metrics (5)" lang="en">Toggle charts list for vusers metrics (5)</title><g fill="currentColor"><path d="M12 8L6 14L7.41 15.41L12 10.83L16.59 15.41L18 14L12 8Z"></path></g></svg>`
+
+      // populate index with divs
+      let $htmlTree = $('<div class="mt-0 flex flex-col justify-start space-y-3 pb-3 text-gray-default"></div>')
+      Object.keys(indexTree).forEach((parent) => {
+        const nodeClass = parent.replaceAll(sanitizer, "-")
+        const nodes = indexTree[parent].map((n) =>
+          `<a class="text-xsm focus:text-beige hover:bg-black-default focus:ring-black-200 text-gray-default ml-2 block truncate rounded px-2 py-1.5 font-medium transition hover:text-white focus:ring-2 text-gray-default bg-transparent" 
+            href="#` + (n.name).replaceAll(sanitizer, "-") + '-wrapper" id="' + n.name + '-node" >'
+          + n.name
+          + '</a>').join("")
+
+        nodes.length > 1 ? $htmlTree.append(
+          '<div class="w-full overflow-hidden"><h4 id="' + nodeClass + '-parent" > <div onclick="nodeClick(`' + nodeClass + '`)" class="accordion-toggle cursor-pointer text-gray-default focus:text-beige flex items-center px-0 py-1.5 hover:text-white">'
+          + parent + ' metrics (' + indexTree[parent].length + ')'
+          + '<span class="ml-1 transition" style="transition-origin: center;">' + chevron + '</span>'
+          + ' </div> <div class="' + nodeClass + '-node accordion-details relative flex w-56 flex-col space-y-1 h-auto hidden">' + nodes + '</div></h4></div>'
+        ) :
+          $htmlTree.append("<div class='flex-col h-auto py-3'><a class='hover:text-beige' href='#" + parent + "--wrapper'>" + parent + "</a></div>")
+
+      })
+      const indexTreeContainer = $("#index-tree")
+      $htmlTree.appendTo(indexTreeContainer)
+
+    } else {
+      $("#charts-col").hide();
+      $("#customCountersContainer").hide();
+    }
+
+    function nodeClick(tab) {
+      const nodeClass = '.' + tab + '-node'
+      const nodes = document.querySelectorAll(nodeClass);
+      const parentTab = document.getElementById(tab + "-parent");
+      [...parentTab.classList].includes('chevron-down') ? parentTab.classList.remove('chevron-down') : parentTab.classList.add('chevron-down');
+      for (const node of nodes) {
+        [...node.classList].includes("hidden") ? node.classList.remove("hidden") : node.classList.add("hidden");
+      }
+    }
+
+  </script>
+</body>
+
+</html>

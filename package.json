@@ -1,0 +1,19 @@
+{
+  "name": "artillery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "run-test": "artillery run artillery.yml --output report.json",
+    "generate-report": "artillery report --output report.html report.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1",
+    "artillery": "^2.0.21",
+    "artillery-engine-playwright": "^1.18.0"
+  }
+}

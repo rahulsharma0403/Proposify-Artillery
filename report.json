@@ -1,0 +1,2213 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 1020,
+      "vusers.created": 1020,
+      "browser.page.codes.200": 46171,
+      "browser.http_requests": 49583,
+      "browser.page.codes.307": 1314,
+      "errors.All usernames have been used.": 574,
+      "vusers.failed": 921,
+      "browser.page.codes.201": 108,
+      "vusers.completed": 99,
+      "browser.page.codes.401": 1844,
+      "browser.page.codes.204": 10,
+      "browser.page.codes.304": 99,
+      "errors.locator.click: Timeout 30000ms exceeded.": 294,
+      "browser.page.codes.302": 79,
+      "errors.pw_failed_assertion.toBeVisible": 53,
+      "browser.page.codes.404": 48,
+      "browser.page.codes.502": 1
+    },
+    "rates": {},
+    "firstCounterAt": 1733089544579,
+    "firstHistogramAt": 1733089571483,
+    "lastCounterAt": 1733090097614,
+    "lastHistogramAt": 1733090097614,
+    "firstMetricAt": 1733089544579,
+    "lastMetricAt": 1733090097614,
+    "period": 1733090090000,
+    "summaries": {
+      "vusers.session_length": {
+        "min": 16512.7,
+        "max": 226818.5,
+        "count": 99,
+        "mean": 46863.9,
+        "p50": 25091.6,
+        "median": 25091.6,
+        "p75": 27730.6,
+        "p90": 171159.6,
+        "p95": 217588.2,
+        "p99": 221983.9,
+        "p999": 221983.9
+      },
+      "browser.page.TTFB.https://app.proposify.net/login": {
+        "min": 130.9,
+        "max": 607.8,
+        "count": 36,
+        "mean": 245.7,
+        "p50": 214.9,
+        "median": 214.9,
+        "p75": 273.2,
+        "p90": 333.7,
+        "p95": 441.5,
+        "p99": 572.6,
+        "p999": 572.6
+      },
+      "browser.page.FCP.https://app.proposify.net/login": {
+        "min": 146.5,
+        "max": 650.9,
+        "count": 36,
+        "mean": 269.8,
+        "p50": 232.8,
+        "median": 232.8,
+        "p75": 295.9,
+        "p90": 354.3,
+        "p95": 459.5,
+        "p99": 620.3,
+        "p999": 620.3
+      }
+    },
+    "histograms": {
+      "vusers.session_length": {
+        "min": 16512.7,
+        "max": 226818.5,
+        "count": 99,
+        "mean": 46863.9,
+        "p50": 25091.6,
+        "median": 25091.6,
+        "p75": 27730.6,
+        "p90": 171159.6,
+        "p95": 217588.2,
+        "p99": 221983.9,
+        "p999": 221983.9
+      },
+      "browser.page.TTFB.https://app.proposify.net/login": {
+        "min": 130.9,
+        "max": 607.8,
+        "count": 36,
+        "mean": 245.7,
+        "p50": 214.9,
+        "median": 214.9,
+        "p75": 273.2,
+        "p90": 333.7,
+        "p95": 441.5,
+        "p99": 572.6,
+        "p999": 572.6
+      },
+      "browser.page.FCP.https://app.proposify.net/login": {
+        "min": 146.5,
+        "max": 650.9,
+        "count": 36,
+        "mean": 269.8,
+        "p50": 232.8,
+        "median": 232.8,
+        "p75": 295.9,
+        "p90": 354.3,
+        "p95": 459.5,
+        "p99": 620.3,
+        "p999": 620.3
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.0": 6,
+        "vusers.created": 6,
+        "browser.page.codes.200": 117,
+        "browser.http_requests": 117
+      },
+      "rates": {},
+      "firstCounterAt": 1733089544579,
+      "lastCounterAt": 1733089549999,
+      "firstMetricAt": 1733089544579,
+      "lastMetricAt": 1733089549999,
+      "period": "1733089540000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 694,
+        "browser.http_requests": 703,
+        "browser.page.codes.307": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089550000,
+      "lastCounterAt": 1733089559955,
+      "firstMetricAt": 1733089550000,
+      "lastMetricAt": 1733089559955,
+      "period": "1733089550000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 127,
+        "browser.http_requests": 131,
+        "errors.All usernames have been used.": 10,
+        "vusers.failed": 10,
+        "browser.page.codes.201": 5,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10
+      },
+      "rates": {},
+      "firstCounterAt": 1733089560011,
+      "lastCounterAt": 1733089569943,
+      "firstMetricAt": 1733089560011,
+      "lastMetricAt": 1733089569943,
+      "period": "1733089560000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 426,
+        "browser.http_requests": 442,
+        "errors.All usernames have been used.": 4,
+        "vusers.failed": 4,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.307": 19,
+        "browser.page.codes.201": 4,
+        "vusers.completed": 7
+      },
+      "rates": {},
+      "firstCounterAt": 1733089570116,
+      "firstHistogramAt": 1733089571483,
+      "lastCounterAt": 1733089579998,
+      "lastHistogramAt": 1733089578627,
+      "firstMetricAt": 1733089570116,
+      "lastMetricAt": 1733089579998,
+      "period": "1733089570000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 26503.3,
+          "max": 31038.8,
+          "count": 7,
+          "mean": 28017.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 26503.3,
+          "max": 31038.8,
+          "count": 7,
+          "mean": 28017.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 508,
+        "browser.http_requests": 513,
+        "browser.page.codes.307": 8,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "vusers.failed": 7,
+        "vusers.completed": 2,
+        "errors.All usernames have been used.": 7
+      },
+      "rates": {},
+      "firstCounterAt": 1733089580006,
+      "firstHistogramAt": 1733089580800,
+      "lastCounterAt": 1733089589999,
+      "lastHistogramAt": 1733089582788,
+      "firstMetricAt": 1733089580006,
+      "lastMetricAt": 1733089589999,
+      "period": "1733089580000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 28201.4,
+          "max": 31194.7,
+          "count": 2,
+          "mean": 29698.1,
+          "p50": 28290.8,
+          "median": 28290.8,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 28201.4,
+          "max": 31194.7,
+          "count": 2,
+          "mean": 29698.1,
+          "p50": 28290.8,
+          "median": 28290.8,
+          "p75": 28290.8,
+          "p90": 28290.8,
+          "p95": 28290.8,
+          "p99": 28290.8,
+          "p999": 28290.8
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 110,
+        "browser.http_requests": 120,
+        "browser.page.codes.201": 8,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.307": 4,
+        "vusers.completed": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089590000,
+      "firstHistogramAt": 1733089599309,
+      "lastCounterAt": 1733089599991,
+      "lastHistogramAt": 1733089599486,
+      "firstMetricAt": 1733089590000,
+      "lastMetricAt": 1733089599991,
+      "period": "1733089590000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 27662.8,
+          "max": 28852,
+          "count": 2,
+          "mean": 28257.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 27730.6,
+          "p90": 27730.6,
+          "p95": 27730.6,
+          "p99": 27730.6,
+          "p999": 27730.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 27662.8,
+          "max": 28852,
+          "count": 2,
+          "mean": 28257.4,
+          "p50": 27730.6,
+          "median": 27730.6,
+          "p75": 27730.6,
+          "p90": 27730.6,
+          "p95": 27730.6,
+          "p99": 27730.6,
+          "p999": 27730.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 673,
+        "browser.http_requests": 689,
+        "browser.page.codes.307": 21,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 1,
+        "vusers.failed": 2,
+        "vusers.completed": 7,
+        "errors.All usernames have been used.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089600024,
+      "firstHistogramAt": 1733089601047,
+      "lastCounterAt": 1733089609991,
+      "lastHistogramAt": 1733089608330,
+      "firstMetricAt": 1733089600024,
+      "lastMetricAt": 1733089609991,
+      "period": "1733089600000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 25668,
+          "max": 27402.8,
+          "count": 7,
+          "mean": 26588.3,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 25668,
+          "max": 27402.8,
+          "count": 7,
+          "mean": 26588.3,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 311,
+        "browser.http_requests": 321,
+        "browser.page.codes.307": 3,
+        "errors.All usernames have been used.": 10,
+        "vusers.failed": 10,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089610025,
+      "lastCounterAt": 1733089619951,
+      "firstMetricAt": 1733089610025,
+      "lastMetricAt": 1733089619951,
+      "period": "1733089610000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 614,
+        "browser.page.codes.307": 23,
+        "browser.http_requests": 632,
+        "browser.page.codes.201": 3,
+        "vusers.failed": 2,
+        "vusers.completed": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089620070,
+      "firstHistogramAt": 1733089620541,
+      "lastCounterAt": 1733089629990,
+      "lastHistogramAt": 1733089628347,
+      "firstMetricAt": 1733089620070,
+      "lastMetricAt": 1733089629990,
+      "period": "1733089620000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 19568.1,
+          "max": 22130.8,
+          "count": 9,
+          "mean": 20763.3,
+          "p50": 20958.1,
+          "median": 20958.1,
+          "p75": 21813.5,
+          "p90": 21813.5,
+          "p95": 21813.5,
+          "p99": 21813.5,
+          "p999": 21813.5
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 19568.1,
+          "max": 22130.8,
+          "count": 9,
+          "mean": 20763.3,
+          "p50": 20958.1,
+          "median": 20958.1,
+          "p75": 21813.5,
+          "p90": 21813.5,
+          "p95": 21813.5,
+          "p99": 21813.5,
+          "p999": 21813.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 400,
+        "browser.http_requests": 411,
+        "browser.page.codes.307": 7,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "browser.page.codes.201": 6,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089630017,
+      "firstHistogramAt": 1733089639765,
+      "lastCounterAt": 1733089639982,
+      "lastHistogramAt": 1733089639765,
+      "firstMetricAt": 1733089630017,
+      "lastMetricAt": 1733089639982,
+      "period": "1733089630000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 19970.7,
+          "max": 19970.7,
+          "count": 1,
+          "mean": 19970.7,
+          "p50": 20136.3,
+          "median": 20136.3,
+          "p75": 20136.3,
+          "p90": 20136.3,
+          "p95": 20136.3,
+          "p99": 20136.3,
+          "p999": 20136.3
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 19970.7,
+          "max": 19970.7,
+          "count": 1,
+          "mean": 19970.7,
+          "p50": 20136.3,
+          "median": 20136.3,
+          "p75": 20136.3,
+          "p90": 20136.3,
+          "p95": 20136.3,
+          "p99": 20136.3,
+          "p999": 20136.3
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 803,
+        "browser.http_requests": 822,
+        "vusers.failed": 1,
+        "vusers.completed": 8,
+        "browser.page.codes.201": 3,
+        "browser.page.codes.307": 22,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089640004,
+      "firstHistogramAt": 1733089640018,
+      "lastCounterAt": 1733089649963,
+      "lastHistogramAt": 1733089646565,
+      "firstMetricAt": 1733089640004,
+      "lastMetricAt": 1733089649963,
+      "period": "1733089640000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 16757.1,
+          "max": 19224.4,
+          "count": 8,
+          "mean": 18142.6,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18588.1,
+          "p90": 19346.7,
+          "p95": 19346.7,
+          "p99": 19346.7,
+          "p999": 19346.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 16757.1,
+          "max": 19224.4,
+          "count": 8,
+          "mean": 18142.6,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18588.1,
+          "p90": 19346.7,
+          "p95": 19346.7,
+          "p99": 19346.7,
+          "p999": 19346.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 283,
+        "browser.http_requests": 295,
+        "browser.page.codes.307": 5,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 9,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089650044,
+      "firstHistogramAt": 1733089658630,
+      "lastCounterAt": 1733089659989,
+      "lastHistogramAt": 1733089658630,
+      "firstMetricAt": 1733089650044,
+      "lastMetricAt": 1733089659989,
+      "period": "1733089650000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 18789.7,
+          "max": 18789.7,
+          "count": 1,
+          "mean": 18789.7,
+          "p50": 18963.6,
+          "median": 18963.6,
+          "p75": 18963.6,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 18789.7,
+          "max": 18789.7,
+          "count": 1,
+          "mean": 18789.7,
+          "p50": 18963.6,
+          "median": 18963.6,
+          "p75": 18963.6,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 782,
+        "browser.http_requests": 802,
+        "browser.page.codes.307": 23,
+        "vusers.failed": 2,
+        "vusers.completed": 8,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089660093,
+      "firstHistogramAt": 1733089660393,
+      "lastCounterAt": 1733089669977,
+      "lastHistogramAt": 1733089665088,
+      "firstMetricAt": 1733089660093,
+      "lastMetricAt": 1733089669977,
+      "period": "1733089660000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 17248,
+          "max": 19549.7,
+          "count": 8,
+          "mean": 18231.6,
+          "p50": 18220,
+          "median": 18220,
+          "p75": 18588.1,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 17248,
+          "max": 19549.7,
+          "count": 8,
+          "mean": 18231.6,
+          "p50": 18220,
+          "median": 18220,
+          "p75": 18588.1,
+          "p90": 18963.6,
+          "p95": 18963.6,
+          "p99": 18963.6,
+          "p999": 18963.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 329,
+        "browser.http_requests": 344,
+        "errors.All usernames have been used.": 7,
+        "vusers.failed": 7,
+        "vusers.created_by_name.0": 10,
+        "vusers.created": 10,
+        "browser.page.codes.201": 8,
+        "browser.page.codes.307": 13,
+        "vusers.completed": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089670050,
+      "firstHistogramAt": 1733089676386,
+      "lastCounterAt": 1733089679960,
+      "lastHistogramAt": 1733089679570,
+      "firstMetricAt": 1733089670050,
+      "lastMetricAt": 1733089679960,
+      "period": "1733089670000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 17683.1,
+          "max": 18519.8,
+          "count": 4,
+          "mean": 18044.9,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18220,
+          "p90": 18220,
+          "p95": 18220,
+          "p99": 18220,
+          "p999": 18220
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 17683.1,
+          "max": 18519.8,
+          "count": 4,
+          "mean": 18044.9,
+          "p50": 17859.2,
+          "median": 17859.2,
+          "p75": 18220,
+          "p90": 18220,
+          "p95": 18220,
+          "p99": 18220,
+          "p999": 18220
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 684,
+        "browser.http_requests": 693,
+        "vusers.failed": 4,
+        "vusers.completed": 5,
+        "browser.page.codes.307": 14,
+        "vusers.created_by_name.0": 9,
+        "vusers.created": 9,
+        "errors.All usernames have been used.": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089680082,
+      "firstHistogramAt": 1733089680101,
+      "lastCounterAt": 1733089689925,
+      "lastHistogramAt": 1733089683583,
+      "firstMetricAt": 1733089680082,
+      "lastMetricAt": 1733089689925,
+      "period": "1733089680000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 16512.7,
+          "max": 17213.8,
+          "count": 5,
+          "mean": 16834.8,
+          "p50": 16819.2,
+          "median": 16819.2,
+          "p75": 17158.9,
+          "p90": 17158.9,
+          "p95": 17158.9,
+          "p99": 17158.9,
+          "p999": 17158.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 16512.7,
+          "max": 17213.8,
+          "count": 5,
+          "mean": 16834.8,
+          "p50": 16819.2,
+          "median": 16819.2,
+          "p75": 17158.9,
+          "p90": 17158.9,
+          "p95": 17158.9,
+          "p99": 17158.9,
+          "p999": 17158.9
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 15,
+        "vusers.created": 15,
+        "browser.page.codes.200": 275,
+        "browser.http_requests": 284,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 9,
+        "browser.page.codes.201": 9,
+        "browser.page.codes.307": 3,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089690001,
+      "firstHistogramAt": 1733089698505,
+      "lastCounterAt": 1733089699993,
+      "lastHistogramAt": 1733089698505,
+      "firstMetricAt": 1733089690001,
+      "lastMetricAt": 1733089699993,
+      "period": "1733089690000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 22564.4,
+          "max": 22564.4,
+          "count": 1,
+          "mean": 22564.4,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 22703.7,
+          "p90": 22703.7,
+          "p95": 22703.7,
+          "p99": 22703.7,
+          "p999": 22703.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 22564.4,
+          "max": 22564.4,
+          "count": 1,
+          "mean": 22564.4,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 22703.7,
+          "p90": 22703.7,
+          "p95": 22703.7,
+          "p99": 22703.7,
+          "p999": 22703.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1372,
+        "browser.http_requests": 1435,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.307": 40,
+        "browser.page.codes.401": 31,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 6,
+        "vusers.completed": 8
+      },
+      "rates": {},
+      "firstCounterAt": 1733089700001,
+      "firstHistogramAt": 1733089700432,
+      "lastCounterAt": 1733089709999,
+      "lastHistogramAt": 1733089706582,
+      "firstMetricAt": 1733089700001,
+      "lastMetricAt": 1733089709999,
+      "period": "1733089700000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 21612,
+          "max": 24337.9,
+          "count": 8,
+          "mean": 22929.7,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 23630.3,
+          "p90": 23630.3,
+          "p95": 23630.3,
+          "p99": 23630.3,
+          "p999": 23630.3
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 21612,
+          "max": 24337.9,
+          "count": 8,
+          "mean": 22929.7,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 23630.3,
+          "p90": 23630.3,
+          "p95": 23630.3,
+          "p99": 23630.3,
+          "p999": 23630.3
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.http_requests": 602,
+        "browser.page.codes.401": 23,
+        "browser.page.codes.200": 559,
+        "browser.page.codes.307": 14,
+        "errors.All usernames have been used.": 21,
+        "vusers.failed": 21,
+        "browser.page.codes.304": 2,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.201": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089710000,
+      "lastCounterAt": 1733089719940,
+      "firstMetricAt": 1733089710000,
+      "lastMetricAt": 1733089719940,
+      "period": "1733089710000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "errors.All usernames have been used.": 16,
+        "vusers.failed": 17,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "errors.locator.click: Timeout 30000ms exceeded.": 1,
+        "browser.page.codes.200": 304,
+        "browser.http_requests": 322,
+        "browser.page.codes.201": 7,
+        "browser.page.codes.307": 16,
+        "vusers.completed": 5
+      },
+      "rates": {},
+      "firstCounterAt": 1733089720001,
+      "firstHistogramAt": 1733089724855,
+      "lastCounterAt": 1733089729963,
+      "lastHistogramAt": 1733089729908,
+      "firstMetricAt": 1733089720001,
+      "lastMetricAt": 1733089729963,
+      "period": "1733089720000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 24880.9,
+          "max": 26843,
+          "count": 5,
+          "mean": 25745.2,
+          "p50": 25598.5,
+          "median": 25598.5,
+          "p75": 26115.6,
+          "p90": 26115.6,
+          "p95": 26115.6,
+          "p99": 26115.6,
+          "p999": 26115.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 24880.9,
+          "max": 26843,
+          "count": 5,
+          "mean": 25745.2,
+          "p50": 25598.5,
+          "median": 25598.5,
+          "p75": 26115.6,
+          "p90": 26115.6,
+          "p95": 26115.6,
+          "p99": 26115.6,
+          "p999": 26115.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.locator.click: Timeout 30000ms exceeded.": 8,
+        "vusers.failed": 13,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.200": 1462,
+        "browser.http_requests": 1590,
+        "browser.page.codes.307": 32,
+        "errors.All usernames have been used.": 5,
+        "vusers.completed": 4,
+        "browser.page.codes.401": 96,
+        "browser.page.codes.304": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089730034,
+      "firstHistogramAt": 1733089730326,
+      "lastCounterAt": 1733089739998,
+      "lastHistogramAt": 1733089730936,
+      "firstMetricAt": 1733089730034,
+      "lastMetricAt": 1733089739998,
+      "period": "1733089730000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 21462.6,
+          "max": 24297.2,
+          "count": 4,
+          "mean": 23139.8,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 24107.7,
+          "p90": 24107.7,
+          "p95": 24107.7,
+          "p99": 24107.7,
+          "p999": 24107.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 21462.6,
+          "max": 24297.2,
+          "count": 4,
+          "mean": 23139.8,
+          "p50": 22703.7,
+          "median": 22703.7,
+          "p75": 24107.7,
+          "p90": 24107.7,
+          "p95": 24107.7,
+          "p99": 24107.7,
+          "p999": 24107.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 393,
+        "browser.http_requests": 429,
+        "errors.All usernames have been used.": 20,
+        "vusers.failed": 20,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.307": 9,
+        "browser.page.codes.201": 2,
+        "browser.page.codes.401": 24,
+        "browser.page.codes.304": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089740027,
+      "lastCounterAt": 1733089749997,
+      "firstMetricAt": 1733089740027,
+      "lastMetricAt": 1733089749997,
+      "period": "1733089740000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 241,
+        "browser.http_requests": 256,
+        "errors.All usernames have been used.": 16,
+        "vusers.failed": 18,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "browser.page.codes.201": 7,
+        "browser.page.codes.307": 11,
+        "vusers.completed": 4,
+        "errors.locator.click: Timeout 30000ms exceeded.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089750008,
+      "firstHistogramAt": 1733089756515,
+      "lastCounterAt": 1733089759999,
+      "lastHistogramAt": 1733089758342,
+      "firstMetricAt": 1733089750008,
+      "lastMetricAt": 1733089759999,
+      "period": "1733089750000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 25801.9,
+          "max": 26980.4,
+          "count": 4,
+          "mean": 26456.3,
+          "p50": 26115.6,
+          "median": 26115.6,
+          "p75": 26643.2,
+          "p90": 26643.2,
+          "p95": 26643.2,
+          "p99": 26643.2,
+          "p999": 26643.2
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 25801.9,
+          "max": 26980.4,
+          "count": 4,
+          "mean": 26456.3,
+          "p50": 26115.6,
+          "median": 26115.6,
+          "p75": 26643.2,
+          "p90": 26643.2,
+          "p95": 26643.2,
+          "p99": 26643.2,
+          "p999": 26643.2
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1477,
+        "browser.http_requests": 1528,
+        "vusers.created_by_name.0": 20,
+        "vusers.created": 20,
+        "errors.All usernames have been used.": 4,
+        "vusers.failed": 11,
+        "errors.locator.click: Timeout 30000ms exceeded.": 7,
+        "browser.page.codes.401": 17,
+        "browser.page.codes.307": 37,
+        "browser.page.codes.204": 1,
+        "vusers.completed": 5
+      },
+      "rates": {},
+      "firstCounterAt": 1733089760012,
+      "firstHistogramAt": 1733089761930,
+      "lastCounterAt": 1733089769930,
+      "lastHistogramAt": 1733089763233,
+      "firstMetricAt": 1733089760012,
+      "lastMetricAt": 1733089769930,
+      "period": "1733089760000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 25681.7,
+          "max": 28921.1,
+          "count": 5,
+          "mean": 26935.5,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 25681.7,
+          "max": 28921.1,
+          "count": 5,
+          "mean": 26935.5,
+          "p50": 26643.2,
+          "median": 26643.2,
+          "p75": 27181.5,
+          "p90": 27181.5,
+          "p95": 27181.5,
+          "p99": 27181.5,
+          "p999": 27181.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 50,
+        "vusers.created": 50,
+        "browser.page.codes.200": 405,
+        "browser.http_requests": 415,
+        "browser.page.codes.307": 6,
+        "browser.page.codes.401": 3,
+        "errors.All usernames have been used.": 10,
+        "vusers.failed": 10,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089770016,
+      "lastCounterAt": 1733089779912,
+      "firstMetricAt": 1733089770016,
+      "lastMetricAt": 1733089779912,
+      "period": "1733089770000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 44,
+        "vusers.created": 44,
+        "browser.page.codes.200": 56,
+        "browser.http_requests": 62,
+        "errors.All usernames have been used.": 1,
+        "vusers.failed": 1,
+        "browser.page.codes.201": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089780526,
+      "lastCounterAt": 1733089787325,
+      "firstMetricAt": 1733089780526,
+      "lastMetricAt": 1733089787325,
+      "period": "1733089780000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 73,
+        "vusers.created": 73,
+        "browser.page.codes.200": 625,
+        "browser.http_requests": 628,
+        "browser.page.codes.307": 4,
+        "errors.pw_failed_assertion.toBeVisible": 1,
+        "vusers.failed": 12,
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.302": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089790088,
+      "lastCounterAt": 1733089798792,
+      "firstMetricAt": 1733089790088,
+      "lastMetricAt": 1733089798792,
+      "period": "1733089790000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 64,
+        "vusers.created": 64,
+        "browser.page.codes.200": 935,
+        "browser.http_requests": 956,
+        "errors.locator.click: Timeout 30000ms exceeded.": 2,
+        "vusers.failed": 8,
+        "errors.All usernames have been used.": 6,
+        "browser.page.codes.307": 8,
+        "browser.page.codes.401": 8,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.302": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089800478,
+      "lastCounterAt": 1733089809871,
+      "firstMetricAt": 1733089800478,
+      "lastMetricAt": 1733089809871,
+      "period": "1733089800000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 62,
+        "vusers.created": 62,
+        "browser.page.codes.200": 1585,
+        "browser.http_requests": 1642,
+        "browser.page.codes.307": 32,
+        "browser.page.codes.401": 20,
+        "browser.page.codes.302": 4,
+        "errors.All usernames have been used.": 31,
+        "vusers.failed": 31,
+        "browser.page.codes.201": 2,
+        "vusers.completed": 5
+      },
+      "rates": {},
+      "firstCounterAt": 1733089810024,
+      "firstHistogramAt": 1733089817582,
+      "lastCounterAt": 1733089819998,
+      "lastHistogramAt": 1733089819733,
+      "firstMetricAt": 1733089810024,
+      "lastMetricAt": 1733089819998,
+      "period": "1733089810000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 52300.8,
+          "max": 58346.1,
+          "count": 5,
+          "mean": 54548.3,
+          "p50": 54738,
+          "median": 54738,
+          "p75": 55843.8,
+          "p90": 55843.8,
+          "p95": 55843.8,
+          "p99": 55843.8,
+          "p999": 55843.8
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 52300.8,
+          "max": 58346.1,
+          "count": 5,
+          "mean": 54548.3,
+          "p50": 54738,
+          "median": 54738,
+          "p75": 55843.8,
+          "p90": 55843.8,
+          "p95": 55843.8,
+          "p99": 55843.8,
+          "p999": 55843.8
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 490,
+        "browser.http_requests": 548,
+        "vusers.created_by_name.0": 56,
+        "vusers.created": 56,
+        "browser.page.codes.401": 38,
+        "browser.page.codes.307": 24,
+        "browser.page.codes.302": 2,
+        "errors.All usernames have been used.": 32,
+        "vusers.failed": 36,
+        "browser.page.codes.304": 1,
+        "errors.locator.click: Timeout 30000ms exceeded.": 4
+      },
+      "rates": {},
+      "firstCounterAt": 1733089820001,
+      "lastCounterAt": 1733089829949,
+      "firstMetricAt": 1733089820001,
+      "lastMetricAt": 1733089829949,
+      "period": "1733089820000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 62,
+        "vusers.created": 62,
+        "browser.page.codes.307": 57,
+        "browser.http_requests": 1631,
+        "browser.page.codes.200": 1458,
+        "browser.page.codes.401": 99,
+        "errors.All usernames have been used.": 29,
+        "vusers.failed": 34,
+        "errors.pw_failed_assertion.toBeVisible": 2,
+        "browser.page.codes.304": 11,
+        "errors.locator.click: Timeout 30000ms exceeded.": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089830012,
+      "lastCounterAt": 1733089839945,
+      "firstMetricAt": 1733089830012,
+      "lastMetricAt": 1733089839945,
+      "period": "1733089830000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 58,
+        "vusers.created": 58,
+        "errors.All usernames have been used.": 20,
+        "vusers.failed": 25,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "browser.page.codes.200": 992,
+        "browser.http_requests": 1067,
+        "browser.page.codes.401": 47,
+        "browser.page.codes.307": 27
+      },
+      "rates": {},
+      "firstCounterAt": 1733089840092,
+      "lastCounterAt": 1733089849993,
+      "firstMetricAt": 1733089840092,
+      "lastMetricAt": 1733089849993,
+      "period": "1733089840000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 2024,
+        "browser.http_requests": 2130,
+        "vusers.created_by_name.0": 65,
+        "vusers.created": 65,
+        "browser.page.codes.401": 58,
+        "browser.page.codes.307": 50,
+        "errors.All usernames have been used.": 16,
+        "vusers.failed": 40,
+        "errors.locator.click: Timeout 30000ms exceeded.": 24,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.302": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089850020,
+      "lastCounterAt": 1733089859994,
+      "firstMetricAt": 1733089850020,
+      "lastMetricAt": 1733089859994,
+      "period": "1733089850000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 2005,
+        "browser.http_requests": 2179,
+        "vusers.created_by_name.0": 60,
+        "vusers.created": 60,
+        "browser.page.codes.307": 67,
+        "browser.page.codes.401": 92,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "vusers.failed": 8,
+        "browser.page.codes.302": 5,
+        "errors.All usernames have been used.": 3,
+        "browser.page.codes.304": 6,
+        "browser.page.codes.404": 1,
+        "browser.page.codes.204": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089860022,
+      "lastCounterAt": 1733089869994,
+      "firstMetricAt": 1733089860022,
+      "lastMetricAt": 1733089869994,
+      "period": "1733089860000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.307": 29,
+        "browser.http_requests": 1158,
+        "browser.page.codes.200": 1074,
+        "vusers.created_by_name.0": 58,
+        "vusers.created": 58,
+        "errors.All usernames have been used.": 15,
+        "vusers.failed": 22,
+        "browser.page.codes.401": 47,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.302": 5,
+        "errors.locator.click: Timeout 30000ms exceeded.": 7,
+        "browser.page.codes.404": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089870019,
+      "lastCounterAt": 1733089879888,
+      "firstMetricAt": 1733089870019,
+      "lastMetricAt": 1733089879888,
+      "period": "1733089870000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 863,
+        "browser.http_requests": 906,
+        "vusers.created_by_name.0": 59,
+        "vusers.created": 59,
+        "browser.page.codes.302": 7,
+        "errors.All usernames have been used.": 3,
+        "vusers.failed": 28,
+        "browser.page.codes.401": 14,
+        "errors.locator.click: Timeout 30000ms exceeded.": 25,
+        "browser.page.codes.307": 18,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.404": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089880033,
+      "lastCounterAt": 1733089889775,
+      "firstMetricAt": 1733089880033,
+      "lastMetricAt": 1733089889775,
+      "period": "1733089880000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "vusers.created_by_name.0": 9,
+        "vusers.created": 9,
+        "browser.page.codes.200": 731,
+        "browser.http_requests": 813,
+        "browser.page.codes.404": 8,
+        "browser.page.codes.401": 44,
+        "browser.page.codes.307": 25,
+        "errors.locator.click: Timeout 30000ms exceeded.": 6,
+        "vusers.failed": 8,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.201": 2,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.302": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089890066,
+      "lastCounterAt": 1733089899864,
+      "firstMetricAt": 1733089890066,
+      "lastMetricAt": 1733089899864,
+      "period": "1733089890000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1065,
+        "browser.http_requests": 1150,
+        "errors.locator.click: Timeout 30000ms exceeded.": 10,
+        "vusers.failed": 13,
+        "browser.page.codes.401": 47,
+        "browser.page.codes.307": 32,
+        "browser.page.codes.302": 3,
+        "browser.page.codes.404": 3,
+        "vusers.completed": 1,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.201": 1,
+        "errors.All usernames have been used.": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733089900450,
+      "firstHistogramAt": 1733089904723,
+      "lastCounterAt": 1733089909882,
+      "lastHistogramAt": 1733089904723,
+      "firstMetricAt": 1733089900450,
+      "lastMetricAt": 1733089909882,
+      "period": "1733089900000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 95963.8,
+          "max": 95963.8,
+          "count": 1,
+          "mean": 95963.8,
+          "p50": 95830.1,
+          "median": 95830.1,
+          "p75": 95830.1,
+          "p90": 95830.1,
+          "p95": 95830.1,
+          "p99": 95830.1,
+          "p999": 95830.1
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 95963.8,
+          "max": 95963.8,
+          "count": 1,
+          "mean": 95963.8,
+          "p50": 95830.1,
+          "median": 95830.1,
+          "p75": 95830.1,
+          "p90": 95830.1,
+          "p95": 95830.1,
+          "p99": 95830.1,
+          "p999": 95830.1
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 444,
+        "browser.http_requests": 496,
+        "browser.page.codes.401": 16,
+        "browser.page.codes.307": 25,
+        "errors.All usernames have been used.": 1,
+        "vusers.failed": 6,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "browser.page.codes.304": 5,
+        "browser.page.codes.302": 2,
+        "browser.page.codes.404": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089910336,
+      "lastCounterAt": 1733089919511,
+      "firstMetricAt": 1733089910336,
+      "lastMetricAt": 1733089919511,
+      "period": "1733089910000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1449,
+        "browser.http_requests": 1567,
+        "errors.locator.click: Timeout 30000ms exceeded.": 6,
+        "vusers.failed": 6,
+        "browser.page.codes.401": 74,
+        "browser.page.codes.307": 36,
+        "browser.page.codes.304": 6,
+        "browser.page.codes.302": 3,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089920006,
+      "firstHistogramAt": 1733089924625,
+      "lastCounterAt": 1733089929823,
+      "lastHistogramAt": 1733089924625,
+      "firstMetricAt": 1733089920006,
+      "lastMetricAt": 1733089929823,
+      "period": "1733089920000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 107215.3,
+          "max": 107215.3,
+          "count": 1,
+          "mean": 107215.3,
+          "p50": 108048.6,
+          "median": 108048.6,
+          "p75": 108048.6,
+          "p90": 108048.6,
+          "p95": 108048.6,
+          "p99": 108048.6,
+          "p999": 108048.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 107215.3,
+          "max": 107215.3,
+          "count": 1,
+          "mean": 107215.3,
+          "p50": 108048.6,
+          "median": 108048.6,
+          "p75": 108048.6,
+          "p90": 108048.6,
+          "p95": 108048.6,
+          "p99": 108048.6,
+          "p999": 108048.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1079,
+        "browser.http_requests": 1208,
+        "browser.page.codes.307": 32,
+        "browser.page.codes.401": 85,
+        "errors.locator.click: Timeout 30000ms exceeded.": 11,
+        "vusers.failed": 11,
+        "browser.page.codes.302": 2,
+        "browser.page.codes.304": 12
+      },
+      "rates": {},
+      "firstCounterAt": 1733089930012,
+      "lastCounterAt": 1733089939881,
+      "firstMetricAt": 1733089930012,
+      "lastMetricAt": 1733089939881,
+      "period": "1733089930000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1037,
+        "browser.http_requests": 1128,
+        "browser.page.codes.401": 49,
+        "browser.page.codes.307": 33,
+        "errors.All usernames have been used.": 1,
+        "vusers.failed": 6,
+        "errors.locator.click: Timeout 30000ms exceeded.": 5,
+        "browser.page.codes.404": 2,
+        "browser.page.codes.302": 1,
+        "browser.page.codes.304": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089940099,
+      "lastCounterAt": 1733089949834,
+      "firstMetricAt": 1733089940099,
+      "lastMetricAt": 1733089949834,
+      "period": "1733089940000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1304,
+        "browser.http_requests": 1434,
+        "browser.page.codes.401": 76,
+        "errors.locator.click: Timeout 30000ms exceeded.": 14,
+        "vusers.failed": 17,
+        "browser.page.codes.307": 43,
+        "browser.page.codes.304": 2,
+        "errors.All usernames have been used.": 2,
+        "browser.page.codes.302": 5,
+        "browser.page.codes.404": 1,
+        "errors.pw_failed_assertion.toBeVisible": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089950051,
+      "lastCounterAt": 1733089959994,
+      "firstMetricAt": 1733089950051,
+      "lastMetricAt": 1733089959994,
+      "period": "1733089950000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1095,
+        "browser.http_requests": 1196,
+        "browser.page.codes.307": 36,
+        "browser.page.codes.401": 61,
+        "errors.locator.click: Timeout 30000ms exceeded.": 7,
+        "vusers.failed": 9,
+        "browser.page.codes.304": 2,
+        "browser.page.codes.201": 1,
+        "browser.page.codes.302": 3,
+        "errors.All usernames have been used.": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089960002,
+      "lastCounterAt": 1733089969433,
+      "firstMetricAt": 1733089960002,
+      "lastMetricAt": 1733089969433,
+      "period": "1733089960000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "vusers.failed": 19,
+        "browser.page.codes.200": 965,
+        "browser.http_requests": 1040,
+        "browser.page.codes.401": 37,
+        "errors.pw_failed_assertion.toBeVisible": 5,
+        "browser.page.codes.307": 24,
+        "browser.page.codes.304": 6,
+        "errors.All usernames have been used.": 5,
+        "browser.page.codes.302": 1,
+        "browser.page.codes.404": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733089971211,
+      "lastCounterAt": 1733089979998,
+      "firstMetricAt": 1733089971211,
+      "lastMetricAt": 1733089979998,
+      "period": "1733089970000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1531,
+        "browser.http_requests": 1586,
+        "browser.page.codes.401": 23,
+        "browser.page.codes.307": 22,
+        "errors.All usernames have been used.": 32,
+        "vusers.failed": 42,
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "browser.page.codes.304": 6,
+        "browser.page.codes.404": 4,
+        "browser.page.codes.204": 2,
+        "errors.pw_failed_assertion.toBeVisible": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733089980007,
+      "lastCounterAt": 1733089989955,
+      "firstMetricAt": 1733089980007,
+      "lastMetricAt": 1733089989955,
+      "period": "1733089980000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1849,
+        "browser.http_requests": 1925,
+        "errors.All usernames have been used.": 19,
+        "vusers.failed": 39,
+        "errors.locator.click: Timeout 30000ms exceeded.": 16,
+        "browser.page.codes.307": 29,
+        "browser.page.codes.302": 3,
+        "browser.page.codes.401": 44,
+        "errors.pw_failed_assertion.toBeVisible": 4,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.201": 3,
+        "browser.page.codes.304": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733089990021,
+      "lastCounterAt": 1733089999052,
+      "firstMetricAt": 1733089990021,
+      "lastMetricAt": 1733089999052,
+      "period": "1733089990000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1177,
+        "browser.http_requests": 1409,
+        "browser.page.codes.307": 50,
+        "errors.All usernames have been used.": 24,
+        "vusers.failed": 26,
+        "browser.page.codes.401": 165,
+        "browser.page.codes.302": 9,
+        "browser.page.codes.404": 1,
+        "errors.locator.click: Timeout 30000ms exceeded.": 2,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090000013,
+      "firstHistogramAt": 1733090008495,
+      "lastCounterAt": 1733090009800,
+      "lastHistogramAt": 1733090008495,
+      "firstMetricAt": 1733090000013,
+      "lastMetricAt": 1733090009800,
+      "period": "1733090000000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 170894.5,
+          "max": 170894.5,
+          "count": 1,
+          "mean": 170894.5,
+          "p50": 171159.6,
+          "median": 171159.6,
+          "p75": 171159.6,
+          "p90": 171159.6,
+          "p95": 171159.6,
+          "p99": 171159.6,
+          "p999": 171159.6
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 170894.5,
+          "max": 170894.5,
+          "count": 1,
+          "mean": 170894.5,
+          "p50": 171159.6,
+          "median": 171159.6,
+          "p75": 171159.6,
+          "p90": 171159.6,
+          "p95": 171159.6,
+          "p99": 171159.6,
+          "p999": 171159.6
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.401": 158,
+        "browser.http_requests": 1066,
+        "browser.page.codes.307": 41,
+        "browser.page.codes.404": 3,
+        "browser.page.codes.200": 867,
+        "browser.page.codes.304": 6,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 7,
+        "browser.page.codes.302": 1,
+        "errors.locator.click: Timeout 30000ms exceeded.": 1,
+        "browser.page.codes.204": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090010020,
+      "lastCounterAt": 1733090019994,
+      "firstMetricAt": 1733090010020,
+      "lastMetricAt": 1733090019994,
+      "period": "1733090010000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1306,
+        "browser.http_requests": 1527,
+        "errors.locator.click: Timeout 30000ms exceeded.": 19,
+        "vusers.failed": 50,
+        "errors.All usernames have been used.": 31,
+        "browser.page.codes.401": 152,
+        "browser.page.codes.307": 55,
+        "browser.page.codes.304": 4,
+        "browser.page.codes.502": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090020008,
+      "lastCounterAt": 1733090029992,
+      "firstMetricAt": 1733090020008,
+      "lastMetricAt": 1733090029992,
+      "period": "1733090020000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 874,
+        "browser.http_requests": 933,
+        "errors.All usernames have been used.": 9,
+        "vusers.failed": 35,
+        "browser.page.codes.307": 28,
+        "errors.locator.click: Timeout 30000ms exceeded.": 26,
+        "browser.page.codes.302": 11,
+        "browser.page.codes.401": 25,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090030009,
+      "lastCounterAt": 1733090039892,
+      "firstMetricAt": 1733090030009,
+      "lastMetricAt": 1733090039892,
+      "period": "1733090030000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.http_requests": 1355,
+        "browser.page.codes.200": 1285,
+        "browser.page.codes.404": 5,
+        "errors.All usernames have been used.": 6,
+        "vusers.failed": 9,
+        "browser.page.codes.401": 28,
+        "browser.page.codes.307": 29,
+        "browser.page.codes.302": 3,
+        "errors.pw_failed_assertion.toBeVisible": 3,
+        "browser.page.codes.204": 1,
+        "vusers.completed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090040110,
+      "firstHistogramAt": 1733090046262,
+      "lastCounterAt": 1733090049990,
+      "lastHistogramAt": 1733090046262,
+      "firstMetricAt": 1733090040110,
+      "lastMetricAt": 1733090049990,
+      "period": "1733090040000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 199165.7,
+          "max": 199165.7,
+          "count": 1,
+          "mean": 199165.7,
+          "p50": 200858.7,
+          "median": 200858.7,
+          "p75": 200858.7,
+          "p90": 200858.7,
+          "p95": 200858.7,
+          "p99": 200858.7,
+          "p999": 200858.7
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 199165.7,
+          "max": 199165.7,
+          "count": 1,
+          "mean": 199165.7,
+          "p50": 200858.7,
+          "median": 200858.7,
+          "p75": 200858.7,
+          "p90": 200858.7,
+          "p95": 200858.7,
+          "p99": 200858.7,
+          "p999": 200858.7
+        }
+      }
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 1741,
+        "browser.http_requests": 1831,
+        "errors.All usernames have been used.": 34,
+        "vusers.failed": 47,
+        "browser.page.codes.401": 34,
+        "browser.page.codes.302": 3,
+        "browser.page.codes.307": 38,
+        "browser.page.codes.404": 7,
+        "errors.locator.click: Timeout 30000ms exceeded.": 13,
+        "browser.page.codes.204": 1,
+        "browser.page.codes.201": 1,
+        "browser.page.codes.304": 6
+      },
+      "rates": {},
+      "firstCounterAt": 1733090050000,
+      "firstHistogramAt": 1733090057744,
+      "lastCounterAt": 1733090059955,
+      "lastHistogramAt": 1733090059910,
+      "firstMetricAt": 1733090050000,
+      "lastMetricAt": 1733090059955,
+      "period": "1733090050000",
+      "summaries": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 161.4,
+          "max": 373.5,
+          "count": 6,
+          "mean": 254.4,
+          "p50": 210.6,
+          "median": 210.6,
+          "p75": 273.2,
+          "p90": 295.9,
+          "p95": 295.9,
+          "p99": 295.9,
+          "p999": 295.9
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 178.6,
+          "max": 391.5,
+          "count": 6,
+          "mean": 281,
+          "p50": 262.5,
+          "median": 262.5,
+          "p75": 308,
+          "p90": 314.2,
+          "p95": 314.2,
+          "p99": 314.2,
+          "p999": 314.2
+        }
+      },
+      "histograms": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 161.4,
+          "max": 373.5,
+          "count": 6,
+          "mean": 254.4,
+          "p50": 210.6,
+          "median": 210.6,
+          "p75": 273.2,
+          "p90": 295.9,
+          "p95": 295.9,
+          "p99": 295.9,
+          "p999": 295.9
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 178.6,
+          "max": 391.5,
+          "count": 6,
+          "mean": 281,
+          "p50": 262.5,
+          "median": 262.5,
+          "p75": 308,
+          "p90": 314.2,
+          "p95": 314.2,
+          "p99": 314.2,
+          "p999": 314.2
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.All usernames have been used.": 28,
+        "vusers.failed": 44,
+        "browser.page.codes.307": 57,
+        "browser.http_requests": 737,
+        "browser.page.codes.200": 571,
+        "errors.pw_failed_assertion.toBeVisible": 7,
+        "browser.page.codes.401": 107,
+        "errors.locator.click: Timeout 30000ms exceeded.": 9,
+        "browser.page.codes.201": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1733090060005,
+      "firstHistogramAt": 1733090060357,
+      "lastCounterAt": 1733090069940,
+      "lastHistogramAt": 1733090069840,
+      "firstMetricAt": 1733090060005,
+      "lastMetricAt": 1733090069940,
+      "period": "1733090060000",
+      "summaries": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 144.7,
+          "max": 607.8,
+          "count": 20,
+          "mean": 276.5,
+          "p50": 237.5,
+          "median": 237.5,
+          "p75": 278.7,
+          "p90": 441.5,
+          "p95": 572.6,
+          "p99": 572.6,
+          "p999": 572.6
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 166.7,
+          "max": 650.9,
+          "count": 20,
+          "mean": 301.1,
+          "p50": 257.3,
+          "median": 257.3,
+          "p75": 301.9,
+          "p90": 459.5,
+          "p95": 620.3,
+          "p99": 620.3,
+          "p999": 620.3
+        }
+      },
+      "histograms": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 144.7,
+          "max": 607.8,
+          "count": 20,
+          "mean": 276.5,
+          "p50": 237.5,
+          "median": 237.5,
+          "p75": 278.7,
+          "p90": 441.5,
+          "p95": 572.6,
+          "p99": 572.6,
+          "p999": 572.6
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 166.7,
+          "max": 650.9,
+          "count": 20,
+          "mean": 301.1,
+          "p50": 257.3,
+          "median": 257.3,
+          "p75": 301.9,
+          "p90": 459.5,
+          "p95": 620.3,
+          "p99": 620.3,
+          "p999": 620.3
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.All usernames have been used.": 22,
+        "vusers.failed": 44,
+        "errors.pw_failed_assertion.toBeVisible": 19,
+        "errors.locator.click: Timeout 30000ms exceeded.": 3,
+        "browser.page.codes.200": 257,
+        "browser.http_requests": 267,
+        "browser.page.codes.307": 8,
+        "vusers.completed": 1,
+        "browser.page.codes.201": 1,
+        "browser.page.codes.401": 2
+      },
+      "rates": {},
+      "firstCounterAt": 1733090070015,
+      "firstHistogramAt": 1733090070393,
+      "lastCounterAt": 1733090079819,
+      "lastHistogramAt": 1733090078008,
+      "firstMetricAt": 1733090070015,
+      "lastMetricAt": 1733090079819,
+      "period": "1733090070000",
+      "summaries": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 130.9,
+          "max": 237.6,
+          "count": 10,
+          "mean": 178.9,
+          "p50": 183.1,
+          "median": 183.1,
+          "p75": 186.8,
+          "p90": 202.4,
+          "p95": 202.4,
+          "p99": 202.4,
+          "p999": 202.4
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 146.5,
+          "max": 253,
+          "count": 10,
+          "mean": 200.5,
+          "p50": 202.4,
+          "median": 202.4,
+          "p75": 206.5,
+          "p90": 232.8,
+          "p95": 232.8,
+          "p99": 232.8,
+          "p999": 232.8
+        },
+        "vusers.session_length": {
+          "min": 205868.3,
+          "max": 205868.3,
+          "count": 1,
+          "mean": 205868.3,
+          "p50": 204916.5,
+          "median": 204916.5,
+          "p75": 204916.5,
+          "p90": 204916.5,
+          "p95": 204916.5,
+          "p99": 204916.5,
+          "p999": 204916.5
+        }
+      },
+      "histograms": {
+        "browser.page.TTFB.https://app.proposify.net/login": {
+          "min": 130.9,
+          "max": 237.6,
+          "count": 10,
+          "mean": 178.9,
+          "p50": 183.1,
+          "median": 183.1,
+          "p75": 186.8,
+          "p90": 202.4,
+          "p95": 202.4,
+          "p99": 202.4,
+          "p999": 202.4
+        },
+        "browser.page.FCP.https://app.proposify.net/login": {
+          "min": 146.5,
+          "max": 253,
+          "count": 10,
+          "mean": 200.5,
+          "p50": 202.4,
+          "median": 202.4,
+          "p75": 206.5,
+          "p90": 232.8,
+          "p95": 232.8,
+          "p99": 232.8,
+          "p999": 232.8
+        },
+        "vusers.session_length": {
+          "min": 205868.3,
+          "max": 205868.3,
+          "count": 1,
+          "mean": 205868.3,
+          "p50": 204916.5,
+          "median": 204916.5,
+          "p75": 204916.5,
+          "p90": 204916.5,
+          "p95": 204916.5,
+          "p99": 204916.5,
+          "p999": 204916.5
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.pw_failed_assertion.toBeVisible": 10,
+        "vusers.failed": 28,
+        "errors.locator.click: Timeout 30000ms exceeded.": 18,
+        "browser.page.codes.200": 67,
+        "browser.page.codes.201": 7,
+        "browser.http_requests": 76,
+        "browser.page.codes.307": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733090080180,
+      "lastCounterAt": 1733090089971,
+      "firstMetricAt": 1733090080180,
+      "lastMetricAt": 1733090089971,
+      "period": "1733090080000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "browser.page.codes.200": 21,
+        "browser.http_requests": 36,
+        "browser.page.codes.307": 13,
+        "vusers.failed": 3,
+        "vusers.completed": 8,
+        "errors.locator.click: Timeout 30000ms exceeded.": 3
+      },
+      "rates": {},
+      "firstCounterAt": 1733090090039,
+      "firstHistogramAt": 1733090090062,
+      "lastCounterAt": 1733090097614,
+      "lastHistogramAt": 1733090097614,
+      "firstMetricAt": 1733090090039,
+      "lastMetricAt": 1733090097614,
+      "period": "1733090090000",
+      "summaries": {
+        "vusers.session_length": {
+          "min": 209206.3,
+          "max": 226818.5,
+          "count": 8,
+          "mean": 218595.2,
+          "p50": 217588.2,
+          "median": 217588.2,
+          "p75": 221983.9,
+          "p90": 221983.9,
+          "p95": 221983.9,
+          "p99": 221983.9,
+          "p999": 221983.9
+        }
+      },
+      "histograms": {
+        "vusers.session_length": {
+          "min": 209206.3,
+          "max": 226818.5,
+          "count": 8,
+          "mean": 218595.2,
+          "p50": 217588.2,
+          "median": 217588.2,
+          "p75": 221983.9,
+          "p90": 221983.9,
+          "p95": 221983.9,
+          "p99": 221983.9,
+          "p999": 221983.9
+        }
+      }
+    }
+  ]
+}
