@@ -1,0 +1,52 @@
+name: Playwright and Artillery Load Testing
+
+on:
+  push:
+    branches:
+      - main  # Runs the tests on push to the main branch
+  pull_request:
+    branches:
+      - main  # Runs the tests on pull requests targeting the main branch
+  workflow_dispatch:  # This enables manual run of the workflow from GitHub Actions
+
+jobs:
+  run_tests:
+    runs-on: ubuntu-latest  # Use the GitHub-hosted Ubuntu runner
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Ensure the correct Node.js version is used
+
+      # Install dependencies (Playwright, Artillery, etc.)
+      - name: Install dependencies
+        run: |
+          npm ci  # Ensure clean install of dependencies
+
+      # Install Playwright browsers (required for your tests)
+      - name: Install Playwright browsers
+        run: |
+          npx playwright install
+
+      # Run Artillery Load Test with Playwright
+      - name: Run Artillery Load Test
+        run: |
+          npm run run-test  # Ensure this script exists in package.json
+
+      # Generate the Artillery report
+      - name: Generate Artillery Report
+        run: |
+          npm run generate-report  # Ensure this script exists in package.json
+
+      # Upload the report as an artifact for later viewing
+      - name: Upload Artillery Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: artillery-report
+          path: report.html 
