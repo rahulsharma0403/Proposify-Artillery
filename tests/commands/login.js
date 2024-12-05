@@ -1,6 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const redis = require('redis');
 
+let isCleanupComplete = false;
+
 // Create a Redis client
 const client = redis.createClient();
 
@@ -117,6 +119,19 @@ async function testLogin(page) {
     }
 }
 
+async function cleanup() {
+  if (isCleanupComplete) return;
+  isCleanupComplete = true;
+  
+  console.log('Cleaning up...');
+  if (client.isOpen) {
+    await client.quit();
+    console.log('Redis connection closed');
+  }
+}
+
+
 module.exports = {
-    testLogin
+    testLogin,
+    cleanup
 };
