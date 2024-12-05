@@ -10,12 +10,6 @@ async function artilleryScript(page) {
     }
 }
 
-async function cleanup() {
-    console.log("Starting cleanup...");
-    // Perform any necessary cleanup actions here
-    console.log("Cleanup completed.");
-}
-
 module.exports = {
     artilleryScript,
     cleanup
