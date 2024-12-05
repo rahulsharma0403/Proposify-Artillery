@@ -13,7 +13,8 @@ config:
 
 scenarios:
   - engine: "playwright"
-    testFunction: "artilleryScript"  # This is the function name being called from your script
+    flow:
+      - function: "artilleryScript"  # This will execute the artilleryScript function, which in turn calls testLogin
 
 after:
-    function: "cleanup"
+  function: "cleanup"  # This will run after the test is finished for any cleanup actions
