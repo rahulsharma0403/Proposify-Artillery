@@ -6,10 +6,10 @@ config:
       headless: true
   processor: "./tests/artillery/login.js"  # Correct relative path to your script
   phases:
-    - duration: 120  # Phase 1 duration
-      arrivalRate: 6 # Maintain 6 users for 2 minutes
-    - duration: 300 # Phase 2 duration
+    - duration: 300 # Phase 1 duration
       rampTo: 2  # Gradually increase virtual users from 1 to 2 over 5 minutes
+    - duration: 120  # Phase 2 duration
+      arrivalRate: 6 # Maintain 6 users for 2 minutes
 
 scenarios:
   - engine: "playwright"
