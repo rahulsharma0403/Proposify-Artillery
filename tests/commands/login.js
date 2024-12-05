@@ -16,21 +16,15 @@ function getAvailableUsername() {
         return;
     }
     
-    activeUsernames.add(availableUsername);
+    activeUsernames.add(availableUsername);  // Add to active usernames
     return availableUsername;
 }
 
-// Function to release a username
+// Function to release a username after the test is finished
 async function releaseUsername(username) {
-    activeUsernames.delete(username);
-    if (usernameQueue.length > 0) {
-        // Resolve the next waiting promise in the queue, making a user available
-        const nextUserResolve = usernameQueue.shift();
-        nextUserResolve(username);
-    }
+    activeUsernames.delete(username);  // Remove from active usernames
+    console.log(`Username released: ${username}`);
 }
-
-
 
 // Login function for a single user
 async function testLogin(page) {
@@ -93,7 +87,7 @@ async function testLogin(page) {
         throw error;
     } finally {
         // Cleanup: Remove the username from the activeUsernames set after the test finishes
-        activeUsernames.delete(username);
+        await releaseUsername(username);  // Explicitly release the username
         console.log(`Cleanup: Removed ${username} from activeUsernames.`);
     }
 }
