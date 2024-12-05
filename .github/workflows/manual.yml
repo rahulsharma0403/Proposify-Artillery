@@ -11,7 +11,7 @@ on:
 
 jobs:
   run_tests:
-    runs-on: ubuntu-latest  # Use the GitHub-hosted Ubuntu runner
+    runs-on: windows-latest  # Use the GitHub-hosted Ubuntu runner
 
     steps:
       # Checkout the code
@@ -36,8 +36,11 @@ jobs:
 
       # Run Artillery Load Test with Playwright
       - name: Run Artillery Load Test
+        env:
+          USERNAMES: ${{ secrets.USERNAMES }}  # Injecting secret usernames
+          PASSWORD: ${{ secrets.PASSWORD }}  # Injecting secret password
         run: |
-          npm run run-test  # Ensure this script exists in package.json
+          npm run run-test  # script exists in package.json
 
       # Generate the Artillery report
       - name: Generate Artillery Report
@@ -49,4 +52,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: artillery-report
-          path: report.html 
+          path: report.html
