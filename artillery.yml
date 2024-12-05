@@ -11,7 +11,7 @@ config:
     - duration: 120  # Phase 2 duration
       arrivalRate: 6 # Maintain 6 users for 2 minutes
     - duration: 60
-      arrivalRate: 0
+      rampTo: 0
 
 scenarios:
   - engine: "playwright"
