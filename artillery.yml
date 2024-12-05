@@ -13,8 +13,7 @@ config:
 
 scenarios:
   - engine: "playwright"
-    flow:
-      - function: "artilleryScript"  # This will execute the artilleryScript function, which in turn calls testLogin
+    testFunction: "artilleryScript"  # This is the function name being called from your script
 
 after:
   flow:
