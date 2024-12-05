@@ -4,39 +4,52 @@ const redis = require('redis');
 // Create a Redis client
 const client = redis.createClient();
 
+// Connect to Redis
+async function connectRedis() {
+    return new Promise((resolve, reject) => {
+        client.on('connect', () => {
+            console.log('Redis client connected');
+            resolve();
+        });
+
+        client.on('error', (err) => {
+            console.error('Redis connection error:', err);
+            reject(err);
+        });
+    });
+}
+
 // Retrieve secrets from environment variables
 const usernames = process.env.USERNAMES ? process.env.USERNAMES.split(',') : [];
 const password = process.env.PASSWORD;
 
 // Initialize the Redis queue with available usernames
 async function initializeUsernameQueue() {
+    if (!client.isOpen) {
+        await client.connect();
+    }
+
     for (const username of usernames) {
-        await client.rPush('usernameQueue', username); // Add to Redis queue
+        await client.rPush('usernameQueue', username);
     }
 }
 
 // Function to get an available username from Redis
 async function getAvailableUsername() {
-    return new Promise((resolve, reject) => {
-        client.lPop('usernameQueue', (err, username) => {
-            if (err) {
-                reject(err);
-            }
-            resolve(username);
-        });
-    });
+    if (!client.isOpen) {
+        await client.connect();
+    }
+
+    return client.lPop('usernameQueue');
 }
 
 // Function to release a username back to Redis
 async function releaseUsername(username) {
-    return new Promise((resolve, reject) => {
-        client.rPush('usernameQueue', username, (err) => {
-            if (err) {
-                reject(err);
-            }
-            resolve();
-        });
-    });
+    if (!client.isOpen) {
+        await client.connect();
+    }
+
+    return client.rPush('usernameQueue', username);
 }
 
 // Login function for a single user
@@ -45,19 +58,16 @@ async function testLogin(page) {
     let startTime = Date.now();
     const maxWaitTime = 30 * 1000; // 30 seconds in milliseconds
 
-    // Wait until a username is available or max wait time is exceeded
     while (true) {
         username = await getAvailableUsername();
         if (username) break;
 
-        // Check if maximum wait time has been exceeded
         if (Date.now() - startTime > maxWaitTime) {
             console.log("Timeout reached. No usernames available.");
-            return; // Exit the function if timeout reached
+            return;
         }
 
         console.log("Waiting for a user to become available...");
-        // Wait for 5 seconds before trying again
         await new Promise(resolve => setTimeout(resolve, 5000));
     }
 
@@ -96,6 +106,7 @@ async function testLogin(page) {
 
         // Logout by selecting 'Logout' from the dropdown menu
         await userDropdownMenu.locator('[role="menuitem"]').filter({ hasText: 'Logout' }).click();
+
     } catch (error) {
         console.error(`Test failed for ${username}:`, error);
         throw error;
@@ -105,9 +116,6 @@ async function testLogin(page) {
         console.log(`Released ${username} back to the queue.`);
     }
 }
-
-// Initialize the Redis queue with usernames before running tests
-initializeUsernameQueue().catch(err => console.error('Failed to initialize username queue:', err));
 
 module.exports = {
     testLogin
