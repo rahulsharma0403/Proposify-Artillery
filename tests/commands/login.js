@@ -107,6 +107,8 @@ async function testLogin(page) {
         await expect(userDropdownMenu).toBeVisible();
 
         // Logout by selecting 'Logout' from the dropdown menu
+         // Logout by selecting 'Logout' from the dropdown menu
+        console.log('Logging out...');
         await userDropdownMenu.locator('[role="menuitem"]').filter({ hasText: 'Logout' }).click();
 
     } catch (error) {
