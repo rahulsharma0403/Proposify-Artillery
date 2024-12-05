@@ -68,6 +68,7 @@ async function testLogin(page) {
         await page.getByRole('button', { name: 'Login' }).click();
 
         // Wait for the "New Document" button to be visible
+        await expect(page.getByRole('button', { name: 'New Document' })).toBeVisible({ timeout: 15000 });
         await page.getByRole('button', { name: 'New Document' }).click();
 
         // Select the last dropdown menu and click on 'Try Editor 3.0'
@@ -80,6 +81,7 @@ async function testLogin(page) {
         await modalLocator.getByRole('button', { name: 'Start from scratch' }).click();
 
         // Click on the user avatar to open the user menu
+        await expect(page.locator('[data-testid="avatar-button"]')).toBeVisible({ timeout: 15000 });
         await page.locator('[data-testid="avatar-button"]').click();
         let userDropdownMenu = await page.locator('[class*="ant-dropdown avatar-dropdown ant-dropdown-placement-bottomRight "]');
         await expect(userDropdownMenu).toBeVisible();
