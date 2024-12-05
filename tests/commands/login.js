@@ -1,12 +1,8 @@
 const { test, expect } = require('@playwright/test');
 
-// Array of usernames
-const usernames = [
-  
-];
-
-// Password for all users
-const password = "xxxxx";
+// Retrieve secrets from environment variables
+const usernames = process.env.USERNAMES ? process.env.USERNAMES.split(',') : [];
+const password = process.env.PASSWORD;
 
 // Track active usernames globally
 let activeUsernames = new Set();
