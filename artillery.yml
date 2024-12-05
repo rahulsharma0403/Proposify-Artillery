@@ -16,4 +16,4 @@ scenarios:
     testFunction: "artilleryScript"  # This is the function name being called from your script
 
 after:
-  - function: "cleanup"
+    function: "cleanup"
