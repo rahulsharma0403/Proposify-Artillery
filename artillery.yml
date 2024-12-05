@@ -10,8 +10,6 @@ config:
       rampTo: 2  # Gradually increase virtual users from 1 to 2 over 5 minutes
     - duration: 120  # Phase 2 duration
       arrivalRate: 6 # Maintain 6 users for 2 minutes
-    - duration: 60
-      rampTo: 0
 
 scenarios:
   - engine: "playwright"
