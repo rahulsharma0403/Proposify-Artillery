@@ -13,6 +13,13 @@ jobs:
   run_tests:
     runs-on: ubuntu-latest  # Use the GitHub-hosted Ubuntu runner
 
+    services:
+      redis:
+        image: redis:latest  # Use the official Redis Docker image
+        ports:
+          - 6379:6379  # Map port 6379 from the container to the host
+        options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 3
+
     steps:
       # Checkout the code
       - name: Checkout code
