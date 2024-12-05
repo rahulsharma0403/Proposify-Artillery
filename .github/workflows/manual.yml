@@ -11,7 +11,7 @@ on:
 
 jobs:
   run_tests:
-    runs-on: windows-latest  # Use the GitHub-hosted Ubuntu runner
+    runs-on: ubuntu-latest  # Use the GitHub-hosted Ubuntu runner
 
     steps:
       # Checkout the code
