@@ -10,7 +10,11 @@ async function artilleryScript(page) {
             latency: 100,              // 100ms latency
         };
         console.log('Applying network conditions:', networkConditions);
-        await page.emulateNetworkConditions(networkConditions);
+
+        // Set network conditions using Playwright's browser context
+        const context = page.context();
+        await context.setNetworkConditions(networkConditions);
+        
         console.log('Network conditions applied.');
 
         // Proceed with the test
