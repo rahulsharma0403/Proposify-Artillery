@@ -14,6 +14,15 @@ config:
 scenarios:
   - engine: "playwright"
     testFunction: "artilleryScript"  # This is the function name being called from your script
+    flow:
+      - get:
+          url: "/"
+          headers:
+            Accept: "text/html"
+          throttle:
+            download: 500 * 1024  # Limit download bandwidth to 500KB/s
+            upload: 500 * 1024    # Limit upload bandwidth to 500KB/s
+            latency: 100          # Simulate 100ms latency
 
 after:
   flow:
